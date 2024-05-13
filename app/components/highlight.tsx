@@ -2,6 +2,8 @@ import gsap from "gsap";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import { BiArrowToRight } from "react-icons/bi";
+import Timeline from "./timeline";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,58 +14,82 @@ interface Props {
 }
 
 export default function Highlight({ title, content, index }: Props) {
-  const titleRef = useRef(null);
-  const contentRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    gsap.from(titleRef.current, {
+    gsap.from(".hl-title", {
       y: 50,
       opacity: 0,
+      duration: 0.5,
       scrollTrigger: {
-        trigger: titleRef.current,
+        trigger: ".hl-title",
         start: "top bottom",
-        // end: "top 70%",
-        // scrub: true,
       },
-
-      duration: 0.5,
     });
-    gsap.from(contentRef.current, {
+
+    gsap.from(".hl-content", {
       y: 50,
       opacity: 0,
-      delay: 0.2,
+      delay: 0.1,
       duration: 0.5,
       scrollTrigger: {
-        trigger: titleRef.current,
-        start: "bottom bottom", // when the bottom of the box hits the bottom of the viewport
-        // end: "top 70%", // end when the top of the box hits 20% from the top of the viewport
-        // scrub: true, // scrubbing makes the animation smooth
+        trigger: ".hl-title",
+        start: "top bottom",
       },
-      ease: "power1.inOut",
+    });
+
+    const wrappers = gsap.utils.toArray(".wrapper");
+
+    const scrollTween = gsap.to(wrappers, {
+      xPercent: -104,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".container",
+        start: "bottom bottom",
+        pin: true,
+        scrub: true,
+      },
+    });
+
+    gsap.to("#nav-to-detail", {
+      opacity: 0,
+      scrollTrigger: {
+        containerAnimation: scrollTween,
+        trigger: "#nav-to-detail",
+        start: "bottom bottom",
+        scrub: true,
+      },
     });
   }, []);
 
   return (
-    <div className="relative min-h-screen mx-4">
-      <div
-        className={`absolute md:bottom-auto bottom-10 mt-96 ${index % 2 == 0 ? "md:left-40" : "md:right-40"}`}
-      >
-        <p
-          className="w-40 mb-10 text-5xl font-extrabold leading-snug md:leading-normal md:text-7xl"
-          ref={titleRef}
-        >
-          My Portfolio
-        </p>
+    <div className="container grid grid-cols-2 w-[200%]" ref={containerRef}>
+      <div className="relative min-h-screen mx-4 wrapper">
         <div
-          className="max-w-[550px] text-xl md:text-2xl md:leading-10 font-thin leading-8"
-          ref={contentRef}
+          className={`absolute md:bottom-auto bottom-12 mt-96 ${index % 2 == 0 ? "md:left-40" : "md:right-40"}`}
         >
-          pig farther dawn connected thing factory giving flame cat tight seen
-          beat plus sand cry military desert pale variety present voyage himself
-          shore instrument zero team or eat beat plus sand cry military desert
-          pale variety present voyage himself shore instrument zero team or eat
+          <BiArrowToRight
+            id="nav-to-detail"
+            className="absolute right-0"
+            size={30}
+          />
+          <p className="w-40 mb-10 text-5xl font-extrabold leading-snug hl-title md:leading-normal md:text-7xl">
+            I'm a Fullstack Developer
+          </p>
+
+          <div className="hl-content max-w-[550px] text-xl md:text-2xl md:leading-10 font-thin leading-8">
+            In Love With Node | AWS | Building Scalable Backends in Japan |
+            Automation Enthusiast.
+            <div>
+              Have spent a great deal of time to thoroughly research and try
+              many aspects so that may have a quite late start in this Web
+              industry. Nevertheless, I realize that it is actually my
+              destination which I am finding and heading to.
+            </div>
+          </div>
         </div>
       </div>
+      <Timeline />
     </div>
   );
 }

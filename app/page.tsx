@@ -18,7 +18,7 @@ export default function Home() {
   //   });
   // });
   return (
-    <main className="flex flex-col bg-gradient-to-b from-gray-700 to-zinc-900">
+    <main className="flex flex-col bg-gradient-to-b from-gray-900 to-zinc-900 h-[2000px]">
       <NavBar />
       <Highlight
         title={"My Portfolio"}
