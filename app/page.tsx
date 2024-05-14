@@ -18,7 +18,7 @@ export default function Home() {
   //   });
   // });
   return (
-    <main className="flex flex-col bg-gradient-to-b from-gray-900 to-zinc-900 h-[2000px]">
+    <main className="flex flex-col bg-gradient-to-b from-gray-900 to-zinc-900 h-[3000px]">
       <NavBar />
       <Highlight
         title={"My Portfolio"}
@@ -27,6 +27,7 @@ export default function Home() {
         }
         index={0}
       ></Highlight>
+
       {/* <hr />
       <Highlight
         title={"My Portfolio"}

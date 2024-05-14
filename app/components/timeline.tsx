@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
+import Image from "next/image";
 
 const list = [
   { time: "June, 2019", event: "Hanoi University Of Science And Technology" },
@@ -14,7 +15,7 @@ export default function Timeline() {
     gsap.from(".event", {
       y: -500,
       scrollTrigger: {
-        trigger: ".container",
+        trigger: ".timeline-container",
         start: "right right",
         scrub: true,
       },
@@ -23,13 +24,18 @@ export default function Timeline() {
   });
 
   return (
-    <div className="container flex flex-col justify-center min-h-screen mx-4 wrapper">
+    <div className="flex flex-col justify-center min-h-screen timeline-container wrapper">
+      <img
+        src="/bg2.svg"
+        alt="Vercel Logo"
+        className="fixed  md:left-[10.5%] z-0 md:w-3/4 opacity-10 "
+      />
       <div className="flex justify-center">
-        <div className="w-full max-w-6xl px-4 py-24 mx-auto md:px-6">
+        <div className="w-full max-w-6xl px-4 py-24 mx-auto">
           <div className="flex flex-col justify-center divide-y divide-slate-200 [&>*]:py-16">
             <div className="w-full max-w-3xl mx-auto">
               <div className="-my-6">
-                <div className="relative py-6 pl-8 ml-8 sm:pl-32 group">
+                <div className="relative py-6 ml-8 sm:pl-32 group">
                   {list.map((val, index) => {
                     return (
                       <div className="mb-8 event" key={index}>

@@ -19,9 +19,9 @@ export default function NavBar() {
         <RxHamburgerMenu size={20} />
       </div>
       <div className="hidden nav-content md:flex md:justify-between md:w-40">
-        <div>Logo</div>
+        <div>PhamVanThuan</div>
       </div>
-      <div className="hidden gap-20 md:flex md:gap-40">
+      <div className="hidden gap-20 md:flex">
         <p className="nav-content">Highlight</p>
         <p className="nav-content">Projects</p>
         <p className="nav-content">Contact</p>
