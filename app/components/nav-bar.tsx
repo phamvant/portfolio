@@ -16,7 +16,7 @@ export default function NavBar() {
   return (
     <div className="fixed top-0 z-50 flex items-center w-full h-16 backdrop-blur-md md:justify-around">
       <div className="pl-4 md:hidden">
-        <RxHamburgerMenu size={20} />
+        <RxHamburgerMenu size={20} color="white" />
       </div>
       <div className="hidden nav-content md:flex md:justify-between md:w-40">
         <div>PhamVanThuan</div>

@@ -90,7 +90,7 @@ export default function Highlight({ title, content, index }: Props) {
               style={{ fill: "#40bdbf" }}
             />
           </svg>
-          <div className="md:px-20 md:pt-20">
+          <div className="pb-16 md:px-20 md:pt-20 md:pb-0">
             <BiArrowToRight
               id="nav-to-detail"
               className="absolute right-8 md:hidden"
