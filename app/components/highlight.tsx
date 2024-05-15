@@ -1,12 +1,14 @@
+"use client";
+
 import gsap from "gsap";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger, TextPlugin } from "gsap/all";
 import { BiArrowToRight } from "react-icons/bi";
 import Timeline from "./timeline";
-import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
 
 interface Props {
   title: string;
@@ -18,6 +20,18 @@ export default function Highlight({ title, content, index }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
+    var tl = gsap.timeline({
+      delay: 1,
+      repeat: -1,
+      // repeatDelay: 2,
+    });
+
+    // tl.to(".hl-title", { text: "I'm a xxxxxxx Developer", duration: 2 });
+    // tl.to(".hl-title", { text: "I'm a yyyyyyy Developer", duration: 2 });
+    // tl.to(".hl-title", { text: "I'm a zzzzzzz Developer", duration: 2 });
+    tl.to(".hl-title", { text: "I'm a Freelance Developer", duration: 2 });
+    tl.to(".hl-title", { text: "I'm a Fullstack Developer", duration: 2 });
+
     gsap.from(".hl-title", {
       y: 50,
       opacity: 0,
@@ -96,7 +110,7 @@ export default function Highlight({ title, content, index }: Props) {
               className="absolute right-8 md:hidden"
               size={30}
             />
-            <p className="w-40 mb-10 text-5xl font-extrabold leading-snug text-white hl-title md:leading-normal md:text-7xl">
+            <p className=" max-w-[700px] mb-10 text-4xl font-extrabold leading-snug text-white  hl-title md:leading-normal md:text-7xl">
               I'm a Fullstack Developer
             </p>
 

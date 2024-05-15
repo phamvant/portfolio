@@ -2,9 +2,18 @@
 
 import Highlight from "./components/highlight";
 import NavBar from "./components/nav-bar";
+import dynamic from "next/dynamic";
+
+const SmoothScroll = dynamic(
+  () => {
+    return import("./components/SmoothScroll/SmoothScroll");
+  },
+  { ssr: false },
+);
 
 export default function Home() {
   return (
+    // <SmoothScroll>
     <main className="flex flex-col bg-gradient-to-b from-gray-900 to-zinc-900 h-[3000px]">
       <NavBar />
       <Highlight
@@ -15,5 +24,6 @@ export default function Home() {
         index={0}
       ></Highlight>
     </main>
+    // </SmoothScroll>
   );
 }
