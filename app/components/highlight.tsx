@@ -20,17 +20,19 @@ export default function Highlight({ title, content, index }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    var tl = gsap.timeline({
+    var titleTimeline = gsap.timeline({
       delay: 1,
       repeat: -1,
-      // repeatDelay: 2,
     });
 
-    // tl.to(".hl-title", { text: "I'm a xxxxxxx Developer", duration: 2 });
-    // tl.to(".hl-title", { text: "I'm a yyyyyyy Developer", duration: 2 });
-    // tl.to(".hl-title", { text: "I'm a zzzzzzz Developer", duration: 2 });
-    tl.to(".hl-title", { text: "I'm a Freelance Developer", duration: 2 });
-    tl.to(".hl-title", { text: "I'm a Fullstack Developer", duration: 2 });
+    titleTimeline.to(".hl-title", {
+      text: "I'm a Freelance Developer",
+      duration: 2,
+    });
+    titleTimeline.to(".hl-title", {
+      text: "I'm a Fullstack Developer",
+      duration: 2,
+    });
 
     gsap.from(".hl-title", {
       y: 50,
@@ -52,6 +54,8 @@ export default function Highlight({ title, content, index }: Props) {
         start: "top bottom",
       },
     });
+
+    //---------------------------TITLE-------------------------//
 
     const wrappers = gsap.utils.toArray(".wrapper");
 
@@ -75,14 +79,30 @@ export default function Highlight({ title, content, index }: Props) {
         scrub: true,
       },
     });
+
+    // const navbarTl = gsap.timeline({});
+
+    // navbarTl.from(".nav-des", {
+    //   y: -200,
+    //   stagger: 0.1,
+    // });
   }, []);
 
+  // <div
+  //   id="navbar-bg"
+  //   className="z-10 flex flex-col w-full h-fit bg-black/20 backdrop-blur-md"
+  // >
+  //   <div className="p-4 pb-0 font-thin nav-des">Highlight</div>
+  //   <div className="p-4 pb-0 font-thin nav-des">Project</div>
+  //   <div className="p-4 pb-4 font-thin nav-des">Contact</div>
+  // </div>
   return (
     <div
       className="scroll-container grid grid-cols-2 w-[200%]"
       ref={containerRef}
     >
-      <div className="flex items-end min-h-screen pb-4 md:items-center wrapper">
+      <div className="flex flex-col items-end justify-between min-h-screen pb-4 md:items-center wrapper">
+        <div></div>
         <div
           className={`grid md:grid-cols-2 px-4 md:bottom-auto bottom-12  ${index % 2 == 0 ? "md:left-40" : "md:right-40"}`}
         >
@@ -109,6 +129,7 @@ export default function Highlight({ title, content, index }: Props) {
               id="nav-to-detail"
               className="absolute right-8 md:hidden"
               size={30}
+              color="white"
             />
             <p className=" max-w-[700px] mb-10 text-4xl font-extrabold leading-snug text-white  hl-title md:leading-normal md:text-7xl">
               I'm a Fullstack Developer
