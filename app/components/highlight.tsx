@@ -79,22 +79,7 @@ export default function Highlight({ title, content, index }: Props) {
         scrub: true,
       },
     });
-
-    // const navbarTl = gsap.timeline({});
-
-    // navbarTl.from(".nav-des", {
-    //   y: -200,
-    //   stagger: 0.1,
-    // });
   }, []);
-  //   <div
-  //   id="navbar-bg"
-  //   className="z-10 flex flex-col w-full h-fit bg-black/20 backdrop-blur-md"
-  // >
-  //   <div className="p-4 pb-0 font-thin nav-des">Highlight</div>
-  //   <div className="p-4 pb-0 font-thin nav-des">Project</div>
-  //   <div className="p-4 pb-4 font-thin nav-des">Contact</div>
-  // </div>
 
   return (
     <div
