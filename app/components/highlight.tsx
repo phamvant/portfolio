@@ -87,8 +87,7 @@ export default function Highlight({ title, content, index }: Props) {
     //   stagger: 0.1,
     // });
   }, []);
-
-  // <div
+  //   <div
   //   id="navbar-bg"
   //   className="z-10 flex flex-col w-full h-fit bg-black/20 backdrop-blur-md"
   // >
@@ -96,6 +95,7 @@ export default function Highlight({ title, content, index }: Props) {
   //   <div className="p-4 pb-0 font-thin nav-des">Project</div>
   //   <div className="p-4 pb-4 font-thin nav-des">Contact</div>
   // </div>
+
   return (
     <div
       className="scroll-container grid grid-cols-2 w-[200%]"
