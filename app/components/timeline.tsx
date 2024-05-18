@@ -38,14 +38,14 @@ export default function Timeline() {
   });
 
   return (
-    <div className="flex flex-col justify-center min-h-screen timeline-container wrapper">
+    <div className="flex flex-col justify-end md:justify-center mb-[10%] md:mb-0 min-h-screen timeline-container wrapper">
       <img
         src="/bg2.svg"
         alt="Vercel Logo"
         className="fixed left-[16%] md:left-[10.5%] z-0 w-3/4 opacity-10 "
       />
       <div className="flex justify-center">
-        <div className="w-full max-w-3xl px-4 py-24 mx-auto">
+        <div className="w-full max-w-3xl px-4  mx-auto">
           {list.map((val, index) => {
             return (
               <div
