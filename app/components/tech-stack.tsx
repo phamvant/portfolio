@@ -72,39 +72,39 @@ export default function TechStack() {
       >
         <img
           src="/tech-icon/react.svg"
-          className="backdrop-blur-md rounded-full border-[1px] bg-white/20 p-2"
+          className="backdrop-blur-md rounded-full border-[1px] z-2 bg-white/20 p-2"
         />
         <img
           src="/tech-icon/nest.svg"
-          className="backdrop-blur-md rounded-full border-[1px] bg-white/20 p-2"
+          className="backdrop-blur-md rounded-full  z-10 border-[1px] bg-white/20 p-2"
         />
         <img
           src="/tech-icon/aws.svg"
-          className="backdrop-blur-md rounded-full border-[1px] bg-white/20 p-2"
+          className="backdrop-blur-md rounded-full  z-10 border-[1px] bg-white/20 p-2"
         />
         <img
           src="/tech-icon/next.svg"
-          className="backdrop-blur-md rounded-full border-[1px] bg-white/20"
+          className="backdrop-blur-md rounded-full  z-10 border-[1px] bg-white/20"
         />
         <img
           src="/tech-icon/docker.svg"
-          className="backdrop-blur-md rounded-full border-[1px] bg-white/20"
+          className="backdrop-blur-md rounded-full  z-10 border-[1px] bg-white/20"
         />
         <img
           src="/tech-icon/flutter.svg"
-          className="backdrop-blur-md rounded-full border-[1px] bg-white/20 p-2"
+          className="backdrop-blur-md rounded-full  z-10 border-[1px] bg-white/20 p-2"
         />
         <img
           src="/tech-icon/vim.svg"
-          className="backdrop-blur-md rounded-full border-[1px] bg-white/20 p-2"
+          className="backdrop-blur-md rounded-full  z-10 border-[1px] bg-white/20 p-2"
         />
         <img
           src="/tech-icon/ts.svg"
-          className="backdrop-blur-md rounded-full border-[1px] bg-white/20 p-2"
+          className="backdrop-blur-md rounded-full  z-10 border-[1px] bg-white/20 p-2"
         />
         <img
           src="/tech-icon/git.svg"
-          className="backdrop-blur-md rounded-full border-[1px] bg-white/20 p-2"
+          className="backdrop-blur-md rounded-full  z-10 border-[1px] bg-white/20 p-2"
         />
       </div>
     </div>

@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import NavBurger from "./burger-navbar";
 import { useEffect, useRef, useState } from "react";
 import DropdownNav from "./navbar-dropdown";
+import ThemeToggle from "./theme-toggle";
 
 export default function NavBar() {
   const [burger, setBurger] = useState(true);
@@ -65,11 +66,14 @@ export default function NavBar() {
           className=" md:justify-between md:flex w-full border-2 p-4 rounded-xl border-gray-600 mt-2 backdrop-blur-md h-16 md:px-20"
           ref={navRef}
         >
-          <div className="flex flex-row justify-between md:hidden">
+          <div className="flex flex-row justify-between md:hidden items-center">
             <div id="burger-ico" className="md:hidden">
               <NavBurger burger={burger} setBurger={setBurger} />
             </div>
             <div className="md:hidden">ThuanPham</div>
+            <div className="md:hidden">
+              <ThemeToggle />
+            </div>
           </div>
 
           <div className="md:block hidden">ThuanPham</div>
@@ -77,6 +81,9 @@ export default function NavBar() {
             <p className="nav-content">Highlight</p>
             <p className="nav-content">Projects</p>
             <p className="nav-content">Contact</p>
+            <div className="hidden">
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>

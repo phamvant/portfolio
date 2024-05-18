@@ -9,7 +9,7 @@ export default function NavBurger({
   burger: boolean;
   setBurger: any;
 }) {
-  const genericHamburgerLine = `h-1 w-8 mb-1 rounded-full bg-white transition ease transform duration-300`;
+  const genericHamburgerLine = `h-1 w-8 mb-1 rounded-full bg-black dark:bg-white transition ease transform duration-300`;
 
   return (
     <button
