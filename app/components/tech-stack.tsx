@@ -3,8 +3,6 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import { AiFillGoogleCircle } from "react-icons/ai";
-import { FaReact } from "react-icons/fa";
 
 export default function TechStack() {
   const iconRef = useRef<HTMLDivElement>(null);
@@ -21,8 +19,6 @@ export default function TechStack() {
     const randomTime = random(3, 5);
     const randomTime2 = random(5, 10);
     const randomAngle = random(8, 12);
-
-    // console.log(gsap.utils.toArray(iconRef.current));
 
     if (iconRef.current) {
       gsap.utils.toArray(iconRef.current.children).forEach((target: any) => {
@@ -71,7 +67,7 @@ export default function TechStack() {
   return (
     <div className="flex flex-col justify-center flex-wrap">
       <div
-        className="flex justify-between md:justify-center w-14"
+        className="flex justify-between md:justify-center w-12 md:w-16"
         ref={iconRef}
       >
         <img

@@ -97,7 +97,7 @@ export default function Highlight({ title, content, index }: Props) {
     >
       <div className="flex flex-col items-end justify-end md:justify-center min-h-screen pb-4 md:items-center wrapper">
         <div
-          className={`grid md:grid-cols-2 md:grid-rows-none grid-rows-3 px-4 md:bottom-auto bottom-12  ${index % 2 == 0 ? "md:left-40" : "md:right-40"}`}
+          className={`grid md:grid-cols-2 md:grid-rows-none grid-rows-3 px-4 md:px-40 md:bottom-auto bottom-12  ${index % 2 == 0 ? "md:left-40" : "md:right-40"}`}
         >
           <div className="md:hidden">
             <TechStack />
@@ -121,7 +121,7 @@ export default function Highlight({ title, content, index }: Props) {
               style={{ fill: "#40bdbf" }}
             />
           </svg>
-          <div className="pb-16 md:px-20 md:pt-20 md:ml-24 md:backdrop-blur-md md:border-2 md:border-gray-500 rounded-xl row-span-2 md:row-span-full">
+          <div className="pb-16 md:px-20 md:pt-20  md:backdrop-blur-md md:border-2 md:border-gray-500 rounded-xl row-span-2 md:row-span-full">
             <BiArrowToRight
               id="nav-to-detail"
               className="absolute right-8 md:hidden"

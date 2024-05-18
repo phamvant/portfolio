@@ -13,7 +13,7 @@ export default function Home() {
           "single keep pocket nature community out art high while bridge knife mean chain lift three stove won climb thin event yet oldest joined actual"
         }
         index={0}
-      ></Highlight>
+      />
     </main>
   );
 }
