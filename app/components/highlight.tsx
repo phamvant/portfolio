@@ -128,11 +128,11 @@ export default function Highlight({ title, content, index }: Props) {
               size={30}
               color="white"
             />
-            <p className="max-w-[700px] mb-10 text-4xl font-extrabold leading-snug text-white  hl-title md:leading-normal md:text-7xl">
+            <p className="max-w-[700px] mb-10 text-4xl font-extrabold leading-snug  hl-title md:leading-normal md:text-7xl">
               I'm a Fullstack Developer
             </p>
 
-            <div className="text-xl font-thin leading-8 text-white max-w-fit hl-content md:text-2xl md:leading-10">
+            <div className="text-xl font-thin leading-8 max-w-fit hl-content md:text-2xl md:leading-10">
               In Love With Node | AWS | Building Scalable Backends in Japan |
               Automation Enthusiast.
               <div>
