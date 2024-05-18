@@ -18,14 +18,14 @@ export default function NavBar() {
   const mm = gsap.matchMedia();
 
   useGSAP(() => {
-    mm.add("(max-width: 700px)", () => {
+    mm.add("(max-width: 400px)", () => {
       gsap.from(".nav-content", {
         top: -200,
         duration: 1,
       });
     });
 
-    mm.add("(max-width: 700px)", () => {
+    mm.add("(max-width: 500px)", () => {
       navDropdown
         .to(navRef.current, {
           height: "350%",
@@ -61,9 +61,10 @@ export default function NavBar() {
     <div className="relative">
       <div className="md:hidden flex-1"></div>
 
-      <div className="fixed justify-center top-0 z-10 flex flex-row  flex-wrap md:flex-row items-center w-full h-16 md:px-40 px-2">
+      <div className="fixed justify-center top-0 z-10 flex flex-row  flex-wrap md:flex-row items-center w-full h-16 md:px-[5%] xl:px-[10%] px-2">
         <div
           className=" md:justify-between md:flex w-full border-2 p-4 rounded-xl border-gray-600 mt-2 backdrop-blur-md h-16 md:px-20"
+          style={{ WebkitBackdropFilter: "5px" }}
           ref={navRef}
         >
           <div className="flex flex-row justify-between md:hidden items-center">
@@ -81,7 +82,7 @@ export default function NavBar() {
             <p className="nav-content">Highlight</p>
             <p className="nav-content">Projects</p>
             <p className="nav-content">Contact</p>
-            <div className="hidden">
+            <div className="hidden md:block">
               <ThemeToggle />
             </div>
           </div>
