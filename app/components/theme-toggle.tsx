@@ -13,7 +13,6 @@ export default function ThemeToggle() {
         className="light-switch sr-only"
         checked={theme === "light"}
         onChange={() => {
-          console.log("object");
           if (theme === "dark") {
             return setTheme("light");
           }
