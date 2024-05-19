@@ -4,7 +4,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import NavBurger from "./burger-navbar";
 import { useEffect, useRef, useState } from "react";
-import DropdownNav from "./navbar-dropdown";
 import ThemeToggle from "./theme-toggle";
 
 export default function NavBar() {

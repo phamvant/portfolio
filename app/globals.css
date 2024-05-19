@@ -25,6 +25,7 @@ html {
 }
 
 body {
+  cursor: none;
   overflow-x: hidden;
   height: 100%;
   color: rgb(var(--foreground-rgb));

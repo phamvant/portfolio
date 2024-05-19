@@ -19,7 +19,7 @@ export default function ThemeToggle() {
           return setTheme("dark");
         }}
       />
-      <label className="relative cursor-pointer p-2 " htmlFor="light-switch">
+      <label className="relative cursor-none p-2 " htmlFor="light-switch">
         <svg
           className="dark:hidden"
           width="16"

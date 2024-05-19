@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger, TextPlugin } from "gsap/all";
 import { BiArrowToRight } from "react-icons/bi";
-import Timeline from "./timeline/timeline";
+import Timeline from "./timeline";
 import TechStack from "./tech-stack";
 
 gsap.registerPlugin(ScrollTrigger);
