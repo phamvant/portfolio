@@ -66,7 +66,7 @@ export default function NavBar() {
           style={{ WebkitBackdropFilter: "5px" }}
           ref={navRef}
         >
-          <div className="flex flex-row items-center justify-between md:hidden items-center">
+          <div className="flex flex-row justify-between md:hidden items-center">
             <div id="burger-ico" className="md:hidden">
               <NavBurger burger={burger} setBurger={setBurger} />
             </div>
@@ -77,7 +77,7 @@ export default function NavBar() {
           </div>
 
           <div className="md:block hidden">ThuanPham</div>
-          <div className="py-4 md:py-0 md:gap-20 gap-4 z-11 items-center flex flex-col md:flex-row mt-4 md:mt-0">
+          <div className="py-4 md:py-0 md:gap-20 gap-4 z-11 md:items-center flex flex-col md:flex-row mt-4 md:mt-0">
             <p className="nav-content">Highlight</p>
             <p className="nav-content">Projects</p>
             <p className="nav-content">Contact</p>

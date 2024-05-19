@@ -36,12 +36,12 @@ export default function Cursor() {
   return (
     <div className="hidden xl:block">
       <div
-        className="cursor-dot z-50 size-1 bg-white fixed pointer-events-none -translate-x-1/2 -translate-y-1/2"
+        className="cursor-dot z-50 size-1 bg-black dark:bg-white fixed pointer-events-none -translate-x-1/2 -translate-y-1/2"
         ref={cursorRef}
       />
       <div
         ref={cursorOutlineRef}
-        className="cursor-dot-outline z-50 size-8 bg-red-50/30 fixed rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 "
+        className="cursor-dot-outline z-50 size-8 bg-black/30 dark:bg-white/30 fixed rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 "
       />
     </div>
   );
