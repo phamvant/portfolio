@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger, TextPlugin } from "gsap/all";
 import { BiArrowToRight } from "react-icons/bi";
-import Timeline from "./timeline";
+import Timeline from "./timeline/timeline";
 import TechStack from "./tech-stack";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -86,7 +86,6 @@ export default function Highlight({ title, content, index }: Props) {
       repeat: -1,
       yoyo: true,
       duration: 1,
-      // ease: "none",
     });
   }, []);
 

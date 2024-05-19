@@ -16,8 +16,6 @@ export default function TimelineCard({
       cardRef.current?.style.setProperty("--x", e.offsetX.toString() + "px");
       cardRef.current?.style.setProperty("--y", e.offsetY.toString() + "px");
       cardRef.current?.style.setProperty("--opacity", "1");
-
-      console.log(cardRef.current?.getAttribute("style"));
     };
 
     const handleMouseOut = () => {
