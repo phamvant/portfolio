@@ -17,11 +17,9 @@ export default function NavBar() {
   const mm = gsap.matchMedia();
 
   useGSAP(() => {
-    mm.add("(max-width: 400px)", () => {
-      gsap.from(".nav-content", {
-        top: -200,
-        duration: 1,
-      });
+    gsap.from(".nav-content", {
+      top: -200,
+      duration: 1,
     });
 
     mm.add("(max-width: 500px)", () => {
