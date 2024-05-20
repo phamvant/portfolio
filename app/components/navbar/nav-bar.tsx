@@ -18,7 +18,7 @@ export default function NavBar() {
 
   useGSAP(() => {
     gsap.from(".nav-content", {
-      top: -200,
+      opacity: 0,
       duration: 1,
     });
 
@@ -74,7 +74,7 @@ export default function NavBar() {
             </div>
           </div>
 
-          <div className="md:block hidden">ThuanPham</div>
+          <div className="md:block hidden nav-content">ThuanPham</div>
           <div className="py-4 md:py-0 md:gap-20 gap-4 z-11 md:items-center flex flex-col md:flex-row mt-4 md:mt-0">
             <p className="nav-content">Highlight</p>
             <p className="nav-content">Projects</p>

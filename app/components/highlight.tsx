@@ -33,10 +33,6 @@ export default function Highlight() {
       y: 50,
       opacity: 0,
       duration: 0.5,
-      scrollTrigger: {
-        trigger: ".hl-title",
-        start: "top bottom",
-      },
     });
 
     gsap.from(".hl-content", {
@@ -44,10 +40,6 @@ export default function Highlight() {
       opacity: 0,
       delay: 0.1,
       duration: 0.5,
-      scrollTrigger: {
-        trigger: ".hl-title",
-        start: "top bottom",
-      },
     });
 
     //---------------------------TITLE-------------------------//
