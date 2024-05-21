@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import NavBurger from "./burger-navbar";
 import { useEffect, useRef, useState } from "react";
 import ThemeToggle from "../theme-toggle";
+import { Link } from "react-scroll";
 
 export default function NavBar() {
   const [burger, setBurger] = useState(true);
@@ -78,7 +79,16 @@ export default function NavBar() {
             ThuanPham
           </div>
           <div className="py-4 md:py-0 md:gap-12 gap-4 z-11 md:items-center flex flex-col md:flex-row mt-4 md:mt-0">
-            <p className="nav-content">Highlight</p>
+            <Link
+              to="timeline"
+              spy={true}
+              smooth={true}
+              offset={150}
+              duration={500}
+              className="nav-content"
+            >
+              Highlight
+            </Link>
             <p className="nav-content">Projects</p>
             <p className="nav-content">Contact</p>
             <div className="hidden md:block">

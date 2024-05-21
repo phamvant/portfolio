@@ -107,9 +107,9 @@ export default function Highlight() {
           <div className="flex-1 md:hidden">
             <TechStack />
           </div>
-          <div className="md:flex-1 flex-auto">
+          <div className="md:flex-1">
             <GlassCard className="tl">
-              <div className="pb-16 md:p-8 xl:p-20 md:backdrop-blur-md md:border-2 md:border-gray-500 rounded-xl row-span-2 pointer-events-none">
+              <div className="pb-16 md:p-8 xl:p-10 xl:pt-20 md:backdrop-blur-md md:border-2 md:border-gray-500 rounded-xl row-span-2 pointer-events-none">
                 <BiArrowToRight
                   id="nav-to-detail"
                   className="absolute right-8 md:hidden"
@@ -135,6 +135,7 @@ export default function Highlight() {
         </div>
       </div>
       <Timeline />
+      {/* <div>asdf</div> */}
     </div>
   );
 }

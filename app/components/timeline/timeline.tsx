@@ -55,12 +55,12 @@ export default function Timeline() {
         alt="bg2"
         className="fixed left-[16%] md:left-[10.5%] z-0 w-3/4 opacity-10 "
       />
-      <div className="flex justify-center">
+      <div className="flex justify-center" id="timeline">
         <div className="w-full max-w-3xl px-4 mx-auto flex flex-col gap-6">
           {list.map((val, index) => {
             return (
               <GlassCard className="event" key={index}>
-                <div className="border-[1px] py-4 rounded-xl pl-8">
+                <div className="border-[1px] py-4 rounded-xl pl-8 border-slate-600">
                   <time className="w-fit left-0 text-xs font-semibold uppercase h-6 text-emerald-600 pointer-events-none">
                     {val.time}
                   </time>
