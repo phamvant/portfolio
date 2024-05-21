@@ -7,6 +7,7 @@ import { ScrollTrigger, TextPlugin } from "gsap/all";
 import { BiArrowToRight } from "react-icons/bi";
 import Timeline from "./timeline/timeline";
 import TechStack from "./tech-stack";
+import GlassCard from "./timeline/glass-card";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
@@ -44,9 +45,9 @@ export default function Highlight() {
 
     //---------------------------TITLE-------------------------//
 
-    const wrappers = gsap.utils.toArray(".wrapper");
+    const wrapper = gsap.utils.toArray(".wrapper");
 
-    const scrollTween = gsap.to(wrappers, {
+    const scrollTween = gsap.to(wrapper, {
       xPercent: -100,
       ease: "none",
       scrollTrigger: {
@@ -80,10 +81,9 @@ export default function Highlight() {
       className="scroll-container grid grid-cols-2 w-[200%]"
       ref={containerRef}
     >
-      <div className="flex flex-col items-end justify-end md:justify-center min-h-screen pb-4 md:pb-0 md:items-center wrapper">
-        <div
-          className={`grid md:grid-cols-2 md:grid-rows-none grid-rows-3 px-4 md:px-[5%] xl:px-[10%] md:bottom-auto bottom-12 md:left-40"`}
-        >
+      <div className="flex flex-col justify-between md:justify-center md:items-center wrapper max-h-screen md:px-[5%] xl:px-[10%]">
+        <div></div>
+        <div className="flex px-4 md:px-0 flex-wrap w-full">
           <svg
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
@@ -94,6 +94,7 @@ export default function Highlight() {
               clipRule: "evenodd",
               strokeLinejoin: "round",
               strokeMiterlimit: 2,
+              zIndex: 0,
             }}
             viewBox="0 0 660 491"
           >
@@ -103,30 +104,32 @@ export default function Highlight() {
               style={{ fill: "#40bdbf" }}
             />
           </svg>
-          <div className="md:hidden">
+          <div className="flex-1 md:hidden">
             <TechStack />
           </div>
-          <div className="pb-16 md:p-8 xl:p-20  md:backdrop-blur-md md:border-2 md:border-gray-500 rounded-xl row-span-2 md:row-span-full">
-            <BiArrowToRight
-              id="nav-to-detail"
-              className="absolute right-8 md:hidden"
-              size={30}
-            />
-            <p className="max-w-[700px] mb-10 text-4xl font-extrabold leading-snug  hl-title md:leading-normal md:text-5xl xl:text-7xl">
-              I'm a Fullstack Developer
-            </p>
+          <div className="md:flex-1 flex-auto">
+            <GlassCard className="tl">
+              <div className="pb-16 md:p-8 xl:p-20 md:backdrop-blur-md md:border-2 md:border-gray-500 rounded-xl row-span-2 pointer-events-none">
+                <BiArrowToRight
+                  id="nav-to-detail"
+                  className="absolute right-8 md:hidden"
+                  size={30}
+                />
+                <p className="max-w-[700px] mb-10 text-4xl font-extrabold leading-snug  hl-title md:leading-normal md:text-5xl xl:text-7xl">
+                  I'm a Fullstack Developer
+                </p>
 
-            <div className="text-xl font-extralight leading-8 max-w-fit hl-content md:text-2xl md:leading-10">
-              In Love With Node | AWS | Building Scalable Backends in Japan |
-              Automation Enthusiast.
-              <div>
-                Have spent a great deal of time to thoroughly research and try
-                many aspects. Nevertheless, I realize that web is actually my
-                destination which I am finding and heading to.
+                <div className="text-xl font-extralight leading-8 max-w-fit hl-content md:text-2xl md:leading-10">
+                  In Love With Node | AWS | Building Scalable Backends in Japan
+                  | Automation Enthusiast.
+                </div>
+                <div className="flex justify-end hl-content font-extralight mt-10">
+                  1% Better Everyday
+                </div>
               </div>
-            </div>
+            </GlassCard>
           </div>
-          <div className="hidden md:flex md:justify-center">
+          <div className="hidden md:flex md:flex-1 md:justify-center">
             <TechStack />
           </div>
         </div>

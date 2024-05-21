@@ -1,9 +1,11 @@
 import { useEffect, useRef } from "react";
 
-export default function TimelineCard({
+export default function GlassCard({
   children,
+  className,
 }: {
   children: React.ReactNode;
+  className: string;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -39,14 +41,16 @@ export default function TimelineCard({
 
   return (
     <div className="relative">
-      <div className="flex flex-col pl-6 mb-8 event rounded-xl border-2 border-gray-800 py-4 backdrop-blur-md pointer-events-none">
+      <div
+        className={`flex flex-col ${className} rounded-xl backdrop-blur-md pointer-events-none`}
+      >
         {children}
       </div>
 
       <div className="absolute inset-0">
         <div
           ref={cardRef}
-          className="flex flex-col pl-6 mb-8 event-mask rounded-xl border-2 border-gray-800 py-4 bg-white/20 text-transparent"
+          className={`flex flex-col ${className}-mask rounded-xl bg-white/20 text-transparent`}
           style={{
             opacity: "var(--opacity, 0)",
             mask: `radial-gradient(
