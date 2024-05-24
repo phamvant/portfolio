@@ -5,7 +5,8 @@
 :root {
   --foreground-rgb: 30, 41, 59;
   --background-start-rgb: 235, 244, 245;
-  --background-end-rgb: 255, 255, 255;
+  --background-end-rgb: 235, 244, 245;
+  /* --background-end-rgb: 255, 255, 255; */
 }
 
 :root[class~="dark"] {
@@ -20,14 +21,17 @@
   box-sizing: border-box;
 }
 
-html {
-  overflow-x: hidden;
+html,
+body {
+  margin: 0;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  font-family: "Signika Negative", sans-serif, Arial;
+  /* overflow-x: hidden; */
 }
 
 body {
   cursor: none;
-  overflow-x: hidden;
-  height: 100%;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,

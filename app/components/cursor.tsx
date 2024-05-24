@@ -34,7 +34,7 @@ export default function Cursor() {
   });
 
   return (
-    <div className="hidden xl:block">
+    <div className="hidden md:block">
       <div
         className="cursor-dot z-50 size-1 bg-black dark:bg-white fixed pointer-events-none -translate-x-1/2 -translate-y-1/2"
         ref={cursorRef}

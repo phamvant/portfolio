@@ -19,7 +19,7 @@ export default function NavBar() {
 
   useGSAP(() => {
     gsap.from(".nav-content", {
-      // opacity: 0,
+      opacity: 0,
       duration: 1,
     });
 
@@ -59,9 +59,9 @@ export default function NavBar() {
     <div className="relative">
       <div className="md:hidden flex-1"></div>
 
-      <div className="fixed justify-center top-0 z-10 flex flex-row  flex-wrap md:flex-row items-center w-full h-16 md:px-[5%] xl:px-[10%] px-2">
+      <div className="fixed justify-center top-8 z-10 flex flex-row  flex-wrap md:flex-row items-center w-full h-16 md:px-[5%] xl:px-[10%] px-2">
         <div
-          className=" md:justify-between md:flex w-full border-2 p-4 rounded-xl border-gray-600 mt-2 backdrop-blur-md h-16 md:px-20"
+          className=" md:justify-between md:flex w-full border-2 p-4 rounded-xl border-gray-600 backdrop-blur-md h-16 md:px-20"
           style={{ WebkitBackdropFilter: "5px" }}
           ref={navRef}
         >
@@ -75,22 +75,32 @@ export default function NavBar() {
             </div>
           </div>
 
-          <div className="md:flex items-center hidden nav-content">
+          <Link
+            to="top"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="md:flex items-center hidden nav-content hover:text-xl text-md transition-all duration-200"
+          >
             ThuanPham
-          </div>
+          </Link>
           <div className="py-4 md:py-0 md:gap-12 gap-4 z-11 md:items-center flex flex-col md:flex-row mt-4 md:mt-0">
             <Link
               to="timeline"
               spy={true}
               smooth={true}
-              offset={150}
+              offset={800}
               duration={500}
-              className="nav-content"
+              className="nav-content hover:text-xl text-md transition-all duration-300"
             >
               Highlight
             </Link>
-            <p className="nav-content">Projects</p>
-            <p className="nav-content">Contact</p>
+            <p className="nav-content hover:text-xl text-md transition-all duration-300">
+              Projects
+            </p>
+            <p className="nav-content hover:text-xl text-md transition-all duration-300">
+              Contact
+            </p>
             <div className="hidden md:block">
               <ThemeToggle />
             </div>

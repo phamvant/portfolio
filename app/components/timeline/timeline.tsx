@@ -49,7 +49,7 @@ export default function Timeline() {
   });
 
   return (
-    <div className="flex flex-col justify-end md:justify-center mb-[10%] md:mb-0 min-h-screen timeline-container wrapper">
+    <div className="flex flex-col justify-center md:mb-0 timeline-container wrapper w-[100%] h-[100%]">
       <img
         src="/bg2.svg"
         alt="bg2"
