@@ -84,7 +84,7 @@ export default function Highlight() {
     >
       <div className="flex flex-col flex-wrap justify-between md:justify-center md:items-center wrapper w-[100%] h-[100%] gap-24">
         <div
-          className="flex px-4  md:px-[5%] xl:px-[10%] flex-wrap w-full mt-20"
+          className="flex px-4 md:px-[5%] xl:px-[10%] flex-wrap w-full mt-20"
           id="top"
         >
           <svg
@@ -113,7 +113,7 @@ export default function Highlight() {
           </div>
           <div className="md:flex-1">
             <GlassCard className="tl">
-              <div className="pb-16 md:p-8 xl:p-10 xl:pt-20 md:border-2 md:border-gray-500 rounded-xl row-span-2 pointer-events-none">
+              <div className="pb-16 md:p-8 xl:p-10 xl:pt-20 md:border-[1px] md:border-gray-500 rounded-xl row-span-2 pointer-events-none">
                 <BiArrowToRight
                   id="nav-to-detail"
                   className="absolute right-8 md:hidden"

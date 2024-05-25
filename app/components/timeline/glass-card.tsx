@@ -50,7 +50,7 @@ export default function GlassCard({
       <div className="absolute inset-0">
         <div
           ref={cardRef}
-          className={`flex flex-col ${className}-mask rounded-xl bg-white/20 text-transparent`}
+          className={`flex flex-col ${className}-mask rounded-xl dark:bg-white/20 bg-cyan-100/50 text-transparent`}
           style={{
             opacity: "var(--opacity, 0)",
             mask: `radial-gradient(
