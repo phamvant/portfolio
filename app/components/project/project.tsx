@@ -35,7 +35,7 @@ export default function Project() {
   return (
     <div className="w-[100%] h-[100%] md:px-[5%] xl:px-[10%] project">
       <div className="h-full flex flex-col justify-center">
-        <div className="grid grid-cols-6 gap-20 h-4/6 mt-28">
+        <div className="grid grid-cols-6 gap-20 h-4/6">
           <div className="col-span-2">
             <div className="flex flex-col gap-8">
               <div className="text-6xl">Languages</div>
