@@ -65,7 +65,7 @@ export default function TechStack() {
   return (
     <div className="flex flex-col justify-center flex-wrap">
       <div
-        className="flex justify-between md:justify-center w-12 md:w-16"
+        className="flex justify-between md:justify-center size-12 md:size-16"
         ref={iconRef}
       >
         <img
@@ -74,35 +74,35 @@ export default function TechStack() {
         />
         <img
           src="/tech-icon/nest.svg"
-          className="backdrop-blur-md rounded-full  z-10 bg-white/20 p-2"
+          className="backdrop-blur-md rounded-full z-10 bg-white/20 p-2"
         />
         <img
           src="/tech-icon/aws.svg"
-          className="backdrop-blur-md rounded-full  z-10 bg-white/20 p-2"
+          className="backdrop-blur-md rounded-full z-10 bg-white/20 p-2"
         />
         <img
           src="/tech-icon/next.svg"
-          className="backdrop-blur-md rounded-full  z-10 bg-white/20"
+          className="backdrop-blur-md rounded-full z-10 bg-white/20"
         />
         <img
           src="/tech-icon/docker.svg"
-          className="backdrop-blur-md rounded-full  z-10 bg-white/20"
+          className="backdrop-blur-md rounded-full z-10 bg-white/20"
         />
         <img
           src="/tech-icon/flutter.svg"
-          className="backdrop-blur-md rounded-full  z-10 bg-white/20 p-2"
+          className="backdrop-blur-md rounded-full z-10 bg-white/20 p-2"
         />
         <img
           src="/tech-icon/vim.svg"
-          className="backdrop-blur-md rounded-full  z-10 bg-white/20 p-2"
+          className="backdrop-blur-md rounded-full z-10 bg-white/20 p-2 "
         />
         <img
           src="/tech-icon/ts.svg"
-          className="backdrop-blur-md rounded-full  z-10 bg-white/20 p-2"
+          className="backdrop-blur-md rounded-full z-10 bg-blue-100 p-2 dark:bg-white/20"
         />
         <img
           src="/tech-icon/git.svg"
-          className="backdrop-blur-md rounded-full  z-10 bg-white/20 p-2"
+          className="backdrop-blur-md rounded-full z-10 bg-white/20 p-2"
         />
       </div>
     </div>

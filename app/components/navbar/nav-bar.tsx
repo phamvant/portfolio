@@ -91,14 +91,14 @@ export default function NavBar() {
               smooth={true}
               offset={800}
               duration={500}
-              className="nav-content hover:text-xl text-md transition-all duration-300"
+              className="nav-content hover:text-xl text-md transition-all duration-300 cursor-default"
             >
               Highlight
             </Link>
-            <p className="nav-content hover:text-xl text-md transition-all duration-300">
+            <p className="nav-content hover:text-xl text-md transition-all duration-300 cursor-default">
               Projects
             </p>
-            <p className="nav-content hover:text-xl text-md transition-all duration-300">
+            <p className="nav-content hover:text-xl text-md transition-all duration-300 cursor-default">
               Contact
             </p>
             <div className="hidden md:block">

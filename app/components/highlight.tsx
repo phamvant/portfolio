@@ -8,12 +8,7 @@ import { BiArrowToRight } from "react-icons/bi";
 import Timeline from "./timeline/timeline";
 import TechStack from "./tech-stack";
 import GlassCard from "./timeline/glass-card";
-import {
-  RiFacebookCircleFill,
-  RiGithubFill,
-  RiLinkedinFill,
-} from "react-icons/ri";
-import { MdAlternateEmail } from "react-icons/md";
+import Website from "./website";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
@@ -87,7 +82,7 @@ export default function Highlight() {
       className="scroll-container flex w-[200%] h-[100%] transition-colors duration-500"
       ref={containerRef}
     >
-      <div className="flex flex-col flex-wrap justify-between md:justify-center md:items-center wrapper w-[100%] h-[100%] gap-20">
+      <div className="flex flex-col flex-wrap justify-between md:justify-center md:items-center wrapper w-[100%] h-[100%] gap-24">
         <div
           className="flex px-4  md:px-[5%] xl:px-[10%] flex-wrap w-full mt-20"
           id="top"
@@ -118,17 +113,17 @@ export default function Highlight() {
           </div>
           <div className="md:flex-1">
             <GlassCard className="tl">
-              <div className="pb-16 md:p-8 xl:p-10 xl:pt-20 md:backdrop-blur-md md:border-2 md:border-gray-500 rounded-xl row-span-2 pointer-events-none">
+              <div className="pb-16 md:p-8 xl:p-10 xl:pt-20 md:border-2 md:border-gray-500 rounded-xl row-span-2 pointer-events-none">
                 <BiArrowToRight
                   id="nav-to-detail"
                   className="absolute right-8 md:hidden"
                   size={30}
                 />
-                <p className="max-w-[700px] mb-10 text-4xl font-extrabold leading-snug  hl-title md:leading-normal md:text-5xl xl:text-7xl">
+                <p className="max-w-[700px] mb-10 text-4xl font-extrabold leading-snug  hl-title md:leading-normal md:text-5xl xl:text-7xl pointer-events-none">
                   I'm a Fullstack Developer
                 </p>
 
-                <div className="text-xl font-extralight leading-8 max-w-fit hl-content md:text-2xl md:leading-10">
+                <div className="text-xl font-extralight leading-8 max-w-fit hl-content md:text-2xl md:leading-10 pointer-events-none">
                   In Love With Node | AWS | Building Scalable Backends in Japan
                   | Automation Enthusiast.
                 </div>
@@ -143,21 +138,7 @@ export default function Highlight() {
           </div>
         </div>
         <div className="flex px-4 md:px-[5%] xl:px-[10%] flex-wrap w-full">
-          <div className="flex flex-1 flex-row gap-20 h-16 transition-all pl-2">
-            <div className="size-16">
-              <RiGithubFill className="size-12 hover:size-14 rounded-full transition-all duration-200 cursor-pointer" />
-            </div>
-            <div className="size-16">
-              <RiLinkedinFill className="size-12 hover:size-14 rounded-full transition-all duration-200 cursor-pointer" />
-            </div>
-            <div className="size-16 z-20">
-              <RiFacebookCircleFill className="size-12 hover:size-14 rounded-full transition-all duration-200 cursor-pointer" />
-            </div>
-            <div className="size-16 z-20">
-              <MdAlternateEmail className="size-12 hover:size-14 rounded-full transition-all duration-200 cursor-pointer" />
-            </div>
-          </div>
-          <div className="flex-1"></div>
+          <Website />
         </div>
       </div>
       <Timeline />
