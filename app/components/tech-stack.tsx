@@ -104,6 +104,10 @@ export default function TechStack() {
           src="/tech-icon/git.svg"
           className="backdrop-blur-md rounded-full z-10 bg-white/20 p-2"
         />
+        <img
+          src="/tech-icon/node.svg"
+          className="backdrop-blur-md rounded-full z-10 bg-white/20 p-2"
+        />
       </div>
     </div>
   );

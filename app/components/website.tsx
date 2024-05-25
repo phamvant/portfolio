@@ -11,7 +11,7 @@ const githubData = [
   ["Projects", 20],
   ["Commits", 400],
   ["Commit days", 200],
-  ["Most contributed", "Node.JS"],
+  ["Favourite", "Node.JS"],
 ];
 
 export default function Website() {
@@ -40,13 +40,13 @@ export default function Website() {
           <MdAlternateEmail className="size-12 hover:size-14 rounded-full transition-all duration-200" />
         </div>
       </div>
-      <div className="flex-1 flex ml-10">
+      <div className="flex-1 flex">
         {githubData.map((val, index) => {
           return (
             <div className="flex-1 flex flex-col gap-4 z-20" key={index}>
               <div className="text-lg">{val[0]}</div>
               <div
-                className={`text-4xl font-semibold hover:text-5xl transition-all duration-300 h-10 items-end ${index < 3 ? "contribute-number" : ""}`}
+                className={`text-4xl font-semibold hover:text-5xl transition-all duration-300 h-8 items-end ${index < 3 ? "contribute-number" : ""}`}
               >
                 {val[1]}
               </div>

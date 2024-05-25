@@ -95,9 +95,16 @@ export default function NavBar() {
             >
               Highlight
             </Link>
-            <p className="nav-content hover:text-xl text-md transition-all duration-300 cursor-default">
+            <Link
+              to="project"
+              spy={true}
+              smooth={true}
+              // offset={800}
+              duration={500}
+              className="nav-content hover:text-xl text-md transition-all duration-300 cursor-default"
+            >
               Projects
-            </p>
+            </Link>
             <p className="nav-content hover:text-xl text-md transition-all duration-300 cursor-default">
               Contact
             </p>
