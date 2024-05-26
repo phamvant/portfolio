@@ -21,8 +21,8 @@ export default function TechStack() {
     if (iconRef.current) {
       gsap.utils.toArray(iconRef.current.children).forEach((target: any) => {
         gsap.set(target, {
-          x: randomX(3),
-          y: randomY(1),
+          x: randomX(0),
+          y: randomY(0),
           rotation: randomAngle(-1),
         });
         moveX(target, -1);

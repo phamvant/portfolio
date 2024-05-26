@@ -31,18 +31,18 @@ export default function Highlight() {
       duration: 2,
     });
 
-    gsap.from(".hl-title", {
-      y: 50,
-      opacity: 0,
-      duration: 0.5,
-    });
+    // gsap.from(".hl-title", {
+    //   y: 50,
+    //   opacity: 0,
+    //   duration: 0.5,
+    // });
 
-    gsap.from(".hl-content", {
-      y: 50,
-      opacity: 0,
-      delay: 0.1,
-      duration: 0.5,
-    });
+    // gsap.from(".hl-content", {
+    //   y: 50,
+    //   opacity: 0,
+    //   delay: 0.1,
+    //   duration: 0.5,
+    // });
 
     //---------------------------TITLE-------------------------//
 
@@ -59,22 +59,22 @@ export default function Highlight() {
       },
     });
 
-    gsap.to("#nav-to-detail", {
-      opacity: 0,
-      scrollTrigger: {
-        containerAnimation: scrollTween,
-        trigger: "#nav-to-detail",
-        start: "bottom bottom",
-        scrub: true,
-      },
-    });
+    // gsap.to("#nav-to-detail", {
+    //   opacity: 0,
+    //   scrollTrigger: {
+    //     containerAnimation: scrollTween,
+    //     trigger: "#nav-to-detail",
+    //     start: "bottom bottom",
+    //     scrub: true,
+    //   },
+    // });
 
-    gsap.from("#nav-to-detail", {
-      x: -10,
-      repeat: -1,
-      yoyo: true,
-      duration: 1,
-    });
+    // gsap.from("#nav-to-detail", {
+    //   x: -10,
+    //   repeat: -1,
+    //   yoyo: true,
+    //   duration: 1,
+    // });
   }, []);
 
   return (
@@ -122,15 +122,15 @@ export default function Highlight() {
                   className="absolute right-8 md:hidden"
                   size={30}
                 />
-                <p className="max-w-[700px] mb-10 text-4xl font-extrabold leading-snug  hl-title md:leading-normal md:text-5xl xl:text-7xl pointer-events-none">
+                <p className="max-w-[700px] mb-10 text-4xl font-extrabold leading-snug  hl-title md:leading-normal md:text-5xl xl:text-7xl pointer-events-none animate-fadeup">
                   I'm a Fullstack Developer
                 </p>
 
-                <div className="text-xl font-extralight leading-8 max-w-fit hl-content md:text-2xl md:leading-10 pointer-events-none">
+                <div className="text-xl font-extralight leading-8 max-w-fit hl-content md:text-2xl md:leading-10 pointer-events-none animate-fadeup">
                   In Love With Node | AWS | Building Scalable Backends in Japan
                   | Automation Enthusiast.
                 </div>
-                <div className="flex justify-end hl-content font-extralight mt-10">
+                <div className="flex justify-end hl-content font-extralight mt-10 animate-fadeup">
                   1% Better Everyday
                 </div>
               </div>

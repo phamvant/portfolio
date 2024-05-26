@@ -4,15 +4,12 @@
 
 :root {
   --foreground-rgb: 30, 41, 59;
-  --background-start-rgb: 235, 244, 245;
-  --background-end-rgb: 235, 244, 245;
-  /* --background-end-rgb: 255, 255, 255; */
+  --background: 220, 230, 230;
 }
 
 :root[class~="dark"] {
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 24, 25, 26;
-  --background-end-rgb: 24, 25, 26;
+  --background: 24, 25, 26;
 }
 
 * {
@@ -20,30 +17,36 @@
   padding: 0;
   box-sizing: border-box;
 }
-@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 html,
 body {
   margin: 0;
   height: 100%;
   -webkit-overflow-scrolling: touch;
-  /* font-family: "Signika Negative", sans-serif, Arial; */
-  /* font-family: "Lucida Console", "Courier New", monospace; */
   font-family: "Courier Prime", monospace;
-  /* overflow-x: hidden; */
 }
 
 body {
   cursor: none;
   color: rgb(var(--foreground-rgb));
   font-family: "Courier Prime", monospace;
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background));
 }
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+/* @keyframes @layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
 
 #stars {
   width: 1px;
@@ -454,28 +457,4 @@ body {
     890px 914px #fff,
     1978px 1858px #fff,
     486px 225px #fff;
-}
-
-@keyframes animStar {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-2000px);
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-@keyframes animStar {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-2000px);
-  }
 }

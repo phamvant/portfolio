@@ -8,16 +8,25 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-      colors: {
-        dark: {
-          text: "#123", // White for dark mode text
+      keyframes: {
+        fadedown: {
+          "0%": { opacity: "0", transform: "translateY(-30px) scale(0.9)" },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0px) scale(1)",
+          },
         },
-        text: "#000",
+        fadeup: {
+          "0%": { opacity: "0", transform: "translateY(30px) scale(0.9)" },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0px) scale(1)",
+          },
+        },
+      },
+      animation: {
+        fadedown: "fadedown 0.5s",
+        fadeup: "fadeup 0.5s",
       },
     },
   },

@@ -27,6 +27,16 @@ const list = [
 
 export default function Timeline() {
   useGSAP(() => {
+    gsap.from(".hl-img", {
+      y: -500,
+      x: 200,
+      scrollTrigger: {
+        trigger: ".timeline-container",
+        start: "right right",
+        scrub: true,
+      },
+    });
+
     gsap.from(".event", {
       y: -500,
       scrollTrigger: {
@@ -56,7 +66,7 @@ export default function Timeline() {
         className="fixed left-[16%] md:left-[10.5%] z-0 w-3/4 opacity-10"
       /> */}
       <div
-        className="flex justify-center gap-20 md:px-[5%] xl:px-[10%] mt-24"
+        className="flex justify-center gap-20 md:px-[5%] xl:px-[10%] max-h-[60%]"
         id="timeline"
       >
         <div className="flex-1 w-full h-full grid grid-cols-3 grid-rows-3 gap-6">
@@ -64,21 +74,21 @@ export default function Timeline() {
             <img
               src="/conference.png"
               alt="conference"
-              className="object-cover w-max h-[100%] rounded-lg"
+              className="object-cover w-max h-[100%] rounded-lg hl-img"
             />
           </div>
           <div className="w-full border-[1px] dark:border-0 border-gray-400 rounded-lg">
             <img
               src="/sun.jpg"
               alt="sun"
-              className="object-cover w-max h-[100%] rounded-lg"
+              className="object-cover w-max h-[100%] rounded-lg hl-img"
             />
           </div>
           <div className="w-full border-[1px] dark:border-0 border-gray-400 rounded-lg">
             <img
               src="/graduate.jpeg"
               alt="sun"
-              className="object-cover w-max h-[100%] rounded-lg"
+              className="object-cover w-max h-[100%] rounded-lg hl-img"
             />
           </div>
           <div className="rounded-lg col-span-3">
