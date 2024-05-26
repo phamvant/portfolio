@@ -140,7 +140,7 @@ export default function Highlight() {
             <TechStack />
           </div>
         </div>
-        <div className="flex px-4 md:px-[5%] xl:px-[10%] flex-wrap w-full">
+        <div className="flex px-4 md:px-[5%] xl:px-[10%] flex-wrap w-full gap-20">
           <Website />
         </div>
       </div>
