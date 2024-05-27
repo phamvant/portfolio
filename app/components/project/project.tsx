@@ -26,8 +26,7 @@ export default function Project() {
   const [curLang, setCurLang] = useState<ProjectInfo[]>(jsPrjs);
 
   return (
-    <div className="w-[100%] h-[100%] md:px-[5%] xl:px-[10%] project flex flex-col justify-center">
-      {/* <div className="h-full flex flex-col justify-center max-h-[60%]"> */}
+    <div className="w-[100%] h-[100%] px-[5%] xl:px-[10%] project flex flex-col justify-center">
       <div className="grid grid-cols-6 gap-20 max-h-[60%]">
         <div className="col-span-2">
           <div className="flex-col gap-8 hidden md:flex">
@@ -44,7 +43,7 @@ export default function Project() {
             </div>
           </div>
         </div>
-        <div className="rounded-lg col-span-6 md:col-span-4 flex flex-col gap-10 mx-4 md:mx-0">
+        <div className="rounded-lg col-span-6 md:col-span-4 flex flex-col gap-10">
           <div className="text-3xl text-right">Javascript</div>
           <div className="w-full h-full grid grid-cols-2 gap-10">
             {curLang.map((project, idx) => {

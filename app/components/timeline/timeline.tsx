@@ -66,25 +66,25 @@ export default function Timeline() {
         className="fixed left-[16%] md:left-[10.5%] z-0 w-3/4 opacity-10"
       /> */}
       <div
-        className="flex justify-center gap-20 md:px-[5%] xl:px-[10%] max-h-[70%] mt-20"
+        className="flex justify-center gap-20 px-[5%] xl:px-[10%] max-h-[70%] mt-20"
         id="timeline"
       >
         <div className="hidden md:flex-1 w-full h-full md:grid grid-cols-3 grid-rows-3 gap-6">
-          <div className="w-full col-span-2 row-span-2 border-[1px] dark:border-0 border-gray-400 rounded-lg">
+          <div className="w-full col-span-3 lg:col-span-2 row-span-2 border-[1px] dark:border-0 border-gray-400 rounded-lg">
             <img
               src="/conference.png"
               alt="conference"
               className="object-cover w-max h-[100%] rounded-lg hl-img"
             />
           </div>
-          <div className="w-full border-[1px] dark:border-0 border-gray-400 rounded-lg">
+          <div className="hidden lg:block w-full border-[1px] dark:border-0 border-gray-400 rounded-lg">
             <img
               src="/sun.jpg"
               alt="sun"
               className="object-cover w-max h-[100%] rounded-lg hl-img"
             />
           </div>
-          <div className="w-full border-[1px] dark:border-0 border-gray-400 rounded-lg">
+          <div className="hidden lg:block w-full border-[1px] dark:border-0 border-gray-400 rounded-lg">
             <img
               src="/graduate.jpeg"
               alt="sun"
@@ -98,14 +98,12 @@ export default function Timeline() {
                 & Technology, a place brimming with talented and passionate
                 individuals. During my time there, I seized the opportunity to
                 participate in numerous conferences, where I showcased my
-                abilities and expanded my horizons. These enriching experiences
-                not only advanced my academic knowledge but also strengthened my
-                social connections and personal growth.
+                abilities and expanded my horizons.
               </div>
             </div>
           </div>
         </div>
-        <div className="flex-1 w-full px-4 md:px-0 mx-auto flex flex-col gap-6">
+        <div className="flex-1 w-full md:px-0 mx-auto flex flex-col gap-6">
           {list.map((val, index) => {
             return (
               <GlassCard className="event" key={index}>

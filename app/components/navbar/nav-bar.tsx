@@ -1,52 +1,54 @@
 "use client";
 
+import gsap from "gsap";
 import NavBurger from "./burger-navbar";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ThemeToggle from "../theme-toggle";
 import { Link } from "react-scroll";
+import { useGSAP } from "@gsap/react";
 
 export default function NavBar() {
   const [burger, setBurger] = useState(true);
 
   const navRef = useRef(null);
-  // const [navDropdown, setNavDropdown] = useState(
-  //   gsap.timeline({ reversed: true }),
-  // );
+  const [navDropdown, setNavDropdown] = useState(
+    gsap.timeline({ reversed: true }),
+  );
 
-  // const mm = gsap.matchMedia();
+  const mm = gsap.matchMedia();
 
-  // useGSAP(() => {
-  //   mm.add("(max-width: 500px)", () => {
-  //     navDropdown
-  //       .to(navRef.current, {
-  //         height: "350%",
-  //         duration: 0.5,
-  //       })
-  //       .from(
-  //         ".nav-content",
-  //         {
-  //           x: -10,
-  //           opacity: 0,
-  //           stagger: {
-  //             each: 0.1,
-  //           },
-  //         },
-  //         "<",
-  //       );
-  //   });
-  // }, []);
+  useGSAP(() => {
+    mm.add("(max-width: 760px)", () => {
+      navDropdown
+        .to(navRef.current, {
+          height: "350%",
+          duration: 0.5,
+        })
+        .from(
+          ".nav-content",
+          {
+            x: -10,
+            opacity: 0,
+            stagger: {
+              each: 0.1,
+            },
+          },
+          "<",
+        );
+    });
+  }, []);
 
-  // useEffect(() => {
-  //   if (navDropdown) {
-  //     navDropdown.reversed(burger);
-  //   }
-  // }, [burger]);
+  useEffect(() => {
+    if (navDropdown) {
+      navDropdown.reversed(burger);
+    }
+  }, [burger]);
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", () => {
-  //     setBurger(true);
-  //   });
-  // }, []);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setBurger(true);
+    });
+  }, []);
 
   return (
     <div className="relative">
@@ -84,7 +86,7 @@ export default function NavBar() {
               smooth={true}
               offset={800}
               duration={500}
-              className="nav-content hover:text-xl text-md transition-all duration-300 cursor-default animate-fadedown"
+              className="nav-content hover:text-xl text-md lg:transition-all lg:duration-300 cursor-default lg:animate-fadedown"
             >
               Highlight
             </Link>
@@ -94,11 +96,11 @@ export default function NavBar() {
               smooth={true}
               // offset={800}
               duration={500}
-              className="nav-content hover:text-xl text-md transition-all duration-300 cursor-default animate-fadedown"
+              className="nav-content hover:text-xl text-md lg:transition-all lg:duration-300 cursor-default lg:animate-fadedown"
             >
               Projects
             </Link>
-            <p className="nav-content hover:text-xl text-md transition-all duration-300 cursor-default animate-fadedown">
+            <p className="nav-content hover:text-xl text-md lg:transition-all lg:duration-300 cursor-default lg:animate-fadedown">
               Contact
             </p>
             <div className="hidden md:block">

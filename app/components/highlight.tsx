@@ -117,11 +117,11 @@ export default function Highlight() {
           <div className="md:flex-1">
             <GlassCard className="tl">
               <div className="pb-16 md:p-8 xl:p-10 xl:pt-20 md:border-[1px] md:border-gray-500 rounded-xl row-span-2 pointer-events-none">
-                <BiArrowToRight
+                {/* <BiArrowToRight
                   id="nav-to-detail"
                   className="absolute right-8 md:hidden"
                   size={30}
-                />
+                /> */}
                 <p className="max-w-[700px] mb-10 text-3xl font-extrabold leading-snug  hl-title md:leading-normal md:text-3xl xl:text-7xl pointer-events-none animate-fadeup">
                   I'm a Fullstack Developer
                 </p>
