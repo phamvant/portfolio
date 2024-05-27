@@ -85,9 +85,9 @@ export default function Highlight() {
       <div id="stars"></div>
       <div id="stars2"></div>
       <div id="stars3"></div>
-      <div className="flex flex-col flex-wrap justify-between md:justify-center md:items-center wrapper w-[100%] h-[100%] gap-24">
+      <div className="flex flex-col flex-wrap justify-end md:justify-center md:items-center wrapper w-[100%] h-[100%] gap-10 md:gap-24">
         <div
-          className="flex px-4 md:px-[5%] xl:px-[10%] flex-wrap w-full mt-20"
+          className="flex px-4 md:px-[5%] xl:px-[10%] flex-wrap w-full mt-20 gap-20 md:gap-0"
           id="top"
         >
           <svg
@@ -122,7 +122,7 @@ export default function Highlight() {
                   className="absolute right-8 md:hidden"
                   size={30}
                 />
-                <p className="max-w-[700px] mb-10 text-4xl font-extrabold leading-snug  hl-title md:leading-normal md:text-5xl xl:text-7xl pointer-events-none animate-fadeup">
+                <p className="max-w-[700px] mb-10 text-3xl font-extrabold leading-snug  hl-title md:leading-normal md:text-3xl xl:text-7xl pointer-events-none animate-fadeup">
                   I'm a Fullstack Developer
                 </p>
 
@@ -140,7 +140,7 @@ export default function Highlight() {
             <TechStack />
           </div>
         </div>
-        <div className="flex px-4 md:px-[5%] xl:px-[10%] flex-wrap w-full gap-20">
+        <div className="flex lg:px-4 md:px-[5%] xl:px-[10%] lg:flex-row flex-col-reverse w-full gap-20 mb-20 lg:mb-0">
           <Website />
         </div>
       </div>

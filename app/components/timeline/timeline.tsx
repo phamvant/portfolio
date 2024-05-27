@@ -66,10 +66,10 @@ export default function Timeline() {
         className="fixed left-[16%] md:left-[10.5%] z-0 w-3/4 opacity-10"
       /> */}
       <div
-        className="flex justify-center gap-20 md:px-[5%] xl:px-[10%] max-h-[60%]"
+        className="flex justify-center gap-20 md:px-[5%] xl:px-[10%] max-h-[70%] mt-20"
         id="timeline"
       >
-        <div className="flex-1 w-full h-full grid grid-cols-3 grid-rows-3 gap-6">
+        <div className="hidden md:flex-1 w-full h-full md:grid grid-cols-3 grid-rows-3 gap-6">
           <div className="w-full col-span-2 row-span-2 border-[1px] dark:border-0 border-gray-400 rounded-lg">
             <img
               src="/conference.png"
