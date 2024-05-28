@@ -33,29 +33,111 @@ export const jsPrjs: ProjectInfo[] = [
 export const cPrjs: ProjectInfo[] = [
   {
     title: "",
-    imgUrl: "/project/c/computehub.png",
+    imgUrl: "/project/js/computehub.png",
     url: "",
     describe:
-      "Node.js project for sharing computing power using a web browser with Pando Computing core module.",
+      "Using Lightweight, Modern GUI framework (LVGL) for building smarthome hub. Also use RTOS for managing network in ESP32 micro-controller",
   },
   {
     title: "",
-    imgUrl: "/project/c/computehub.png",
+    imgUrl: "/project/coming.jpg",
     url: "",
-    describe: "Next application for front end of ComputeHub project",
+    describe: "Coming Soon",
   },
   {
     title: "",
-    imgUrl: "/project/c/lychie.png",
+    imgUrl: "/project/coming.jpg",
+    url: "",
+    describe: "Coming Soon",
+  },
+  {
+    title: "",
+    imgUrl: "/project/coming.jpg",
+    url: "",
+    describe: "Coming Soon",
+  },
+];
+
+export const pyPrjs: ProjectInfo[] = [
+  {
+    title: "",
+    imgUrl: "/project/js/computehub.png",
     url: "",
     describe:
-      "E-commerce project for managing my clothes store using NestJS, NextJS and AWS",
+      "Calibrate the image by adjusting the camera angle, perspective, and applying geometric transformations to ensure that the parking lot is accurately detected",
   },
   {
     title: "",
-    imgUrl: "/project/c/tip.png",
+    imgUrl: "/project/py/excel.jpg",
     url: "",
-    describe: "E-cormerce API using pure NodeJS for learning purpose",
+    describe:
+      "Convert an Excel table from image to XLSX file using OCR (especially for the Vietnamese language)",
+  },
+  {
+    title: "",
+    imgUrl: "/project/coming.jpg",
+    url: "",
+    describe: "Coming Soon",
+  },
+  {
+    title: "",
+    imgUrl: "/project/coming.jpg",
+    url: "",
+    describe: "Coming Soon",
+  },
+];
+
+export const luaPrjs: ProjectInfo[] = [
+  {
+    title: "",
+    imgUrl: "/project/js/computehub.png",
+    url: "",
+    describe: "My config for NeoVim v8",
+  },
+  {
+    title: "",
+    imgUrl: "/project/coming.jpg",
+    url: "",
+    describe: "Coming Soon",
+  },
+  {
+    title: "",
+    imgUrl: "/project/coming.jpg",
+    url: "",
+    describe: "Coming Soon",
+  },
+  {
+    title: "",
+    imgUrl: "/project/coming.jpg",
+    url: "",
+    describe: "Coming Soon",
+  },
+];
+
+export const phpPrjs: ProjectInfo[] = [
+  {
+    title: "",
+    imgUrl: "/project/coming.jpg",
+    url: "",
+    describe: "Coming Soon",
+  },
+  {
+    title: "",
+    imgUrl: "/project/coming.jpg",
+    url: "",
+    describe: "Coming Soon",
+  },
+  {
+    title: "",
+    imgUrl: "/project/coming.jpg",
+    url: "",
+    describe: "Coming Soon",
+  },
+  {
+    title: "",
+    imgUrl: "/project/coming.jpg",
+    url: "",
+    describe: "Coming Soon",
   },
 ];
 
@@ -66,23 +148,23 @@ export const langList: LangProps[] = [
     projects: jsPrjs,
   },
   {
+    name: "Python",
+    color: "bg-blue-400/40",
+    projects: pyPrjs,
+  },
+  {
     name: "C / C++",
     color: "bg-purple-500/40",
     projects: cPrjs,
   },
   {
-    name: "Python",
-    color: "bg-blue-400/40",
-    projects: jsPrjs,
-  },
-  {
     name: "Lua",
     color: "bg-blue-600/40",
-    projects: jsPrjs,
+    projects: luaPrjs,
   },
   {
     name: "PHP (Laravel)",
     color: "bg-orange-600/40",
-    projects: jsPrjs,
+    projects: phpPrjs,
   },
 ];

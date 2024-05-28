@@ -128,7 +128,8 @@ export default function Highlight() {
 
                 <div className="text-xl font-extralight leading-8 max-w-fit hl-content md:text-2xl md:leading-10 pointer-events-none animate-fadeup">
                   In Love With Node | AWS | Building Scalable Backends in Japan
-                  | Automation Enthusiast.
+                  | Using Tech To Solve My Own Real Life Problems | Automation
+                  Enthusiast.
                 </div>
                 <div className="flex justify-end hl-content font-extralight mt-10 animate-fadeup">
                   1% Better Everyday

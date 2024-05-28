@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ProjectCard, ProjectInfo } from "./project-card";
 import { cPrjs, jsPrjs, langList } from "./data";
 
@@ -9,7 +9,6 @@ export interface LangProps {
 }
 
 function LangList({ lang, setState }: { lang: LangProps; setState: any }) {
-  console.log(lang.color);
   return (
     <li
       className={`hover:bg-transparent ${lang.color} p-2 rounded border-[1px] size-fit transition duration-200`}
@@ -25,13 +24,19 @@ function LangList({ lang, setState }: { lang: LangProps; setState: any }) {
 export default function Project() {
   const [curLang, setCurLang] = useState<ProjectInfo[]>(jsPrjs);
 
+  useEffect(() => {
+    console.log(curLang[0].describe);
+  }, [curLang]);
+
   return (
     <div className="w-[100%] h-[100%] px-[5%] xl:px-[10%] project flex flex-col justify-center">
-      <div className="grid grid-cols-6 gap-20 max-h-[60%]">
+      <div className="grid grid-cols-6 gap-20 md:max-h-[70%]">
         <div className="col-span-2">
           <div className="flex-col gap-8 hidden md:flex">
             <div className="text-6xl">Projects</div>
-            <div className="text-xl">All the language i've used</div>
+            <div className="text-xl">
+              All the language i've used in my personal projects
+            </div>
             <div>
               <ul className="space-y-4">
                 {langList.map((lang, idx) => {
