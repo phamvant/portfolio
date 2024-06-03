@@ -24,10 +24,6 @@ function LangList({ lang, setState }: { lang: LangProps; setState: any }) {
 export default function Project() {
   const [curLang, setCurLang] = useState<ProjectInfo[]>(jsPrjs);
 
-  useEffect(() => {
-    console.log(curLang[0].describe);
-  }, [curLang]);
-
   return (
     <div className="w-[100%] h-[100%] px-[5%] xl:px-[10%] project flex flex-col justify-center">
       <div className="grid grid-cols-6 gap-20 md:max-h-[70%]">
