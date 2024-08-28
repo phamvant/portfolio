@@ -8,7 +8,9 @@ export default function Home() {
   return (
     <div>
       <NavBar />
-      <Highlight />
+      <div className="h-screen">
+        <Highlight />
+      </div>
       <Project />
     </div>
   );
