@@ -4,6 +4,19 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 
+const image = [
+  { src: "/tech-icon/react.svg" },
+  { src: "/tech-icon/nest.svg" },
+  { src: "/tech-icon/aws.svg" },
+  { src: "/tech-icon/next.svg" },
+  { src: "/tech-icon/docker.svg" },
+  { src: "/tech-icon/flutter.svg" },
+  { src: "/tech-icon/vim.svg" },
+  { src: "/tech-icon/ts.svg" },
+  { src: "/tech-icon/git.svg" },
+  { src: "/tech-icon/node.svg" },
+];
+
 export default function TechStack() {
   const iconRef = useRef<HTMLDivElement>(null);
 
@@ -65,49 +78,12 @@ export default function TechStack() {
   return (
     <div className="flex flex-col justify-center flex-wrap ">
       <div
-        className="flex justify-between md:justify-center size-16 md:size-16"
+        className="flex justify-between md:justify-center size-16 md:size-16 *:backdrop-blur-md *:rounded-full *:z-10 *:bg-white/20 *:p-2 *:shadow-xl"
         ref={iconRef}
       >
-        <img
-          src="/tech-icon/react.svg"
-          className="backdrop-blur-md rounded-full z-10 bg-white/20 p-2 shadow-xl"
-        />
-        <img
-          src="/tech-icon/nest.svg"
-          className="backdrop-blur-md rounded-full z-10 bg-white/20 p-2 shadow-xl"
-        />
-        <img
-          src="/tech-icon/aws.svg"
-          className="backdrop-blur-md rounded-full z-10 bg-white/20 p-2 shadow-xl"
-        />
-        <img
-          src="/tech-icon/next.svg"
-          className="backdrop-blur-md rounded-full z-10 bg-white/20"
-        />
-        <img
-          src="/tech-icon/docker.svg"
-          className="backdrop-blur-md rounded-full z-10 bg-white/20"
-        />
-        <img
-          src="/tech-icon/flutter.svg"
-          className="backdrop-blur-md rounded-full z-10 bg-white/20 p-2 shadow-xl"
-        />
-        <img
-          src="/tech-icon/vim.svg"
-          className="backdrop-blur-md rounded-full z-10 bg-white/20 p-2 shadow-xl "
-        />
-        <img
-          src="/tech-icon/ts.svg"
-          className="backdrop-blur-md rounded-full z-10 bg-blue-100 p-2 shadow-xl dark:bg-white/20"
-        />
-        <img
-          src="/tech-icon/git.svg"
-          className="backdrop-blur-md rounded-full z-10 bg-white/20 p-2 shadow-xl"
-        />
-        <img
-          src="/tech-icon/node.svg"
-          className="backdrop-blur-md rounded-full z-10 bg-white/20 p-2 shadow-xl"
-        />
+        {image.map((img, idx) => (
+          <img key={idx} src={img.src} />
+        ))}
       </div>
     </div>
   );
