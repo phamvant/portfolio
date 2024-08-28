@@ -4,7 +4,7 @@
 
 :root {
   --foreground-rgb: 30, 41, 59;
-  --background: 220, 230, 230;
+  --background: 238, 249, 249;
 }
 
 :root[class~="dark"] {
@@ -27,7 +27,7 @@ body {
 }
 
 body {
-  cursor: none;
+  /* cursor: none; */
   color: rgb(var(--foreground-rgb));
   font-family: "Courier Prime", monospace;
   background: rgb(var(--background));

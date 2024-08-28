@@ -11,7 +11,7 @@ export interface LangProps {
 function LangList({ lang, setState }: { lang: LangProps; setState: any }) {
   return (
     <li
-      className={`hover:bg-transparent ${lang.color} p-2 rounded border-[1px] size-fit transition duration-200`}
+      className={`hover:bg-transparent ${lang.color} p-2 rounded border-[1px] size-fit transition duration-200 cursor-pointer`}
       onClick={() => {
         setState(lang.projects);
       }}
@@ -25,7 +25,7 @@ export default function Project() {
   const [curLang, setCurLang] = useState<ProjectInfo[]>(jsPrjs);
 
   return (
-    <div className="w-[100%] h-[100%] px-[5%] xl:px-[10%] project flex flex-col justify-center">
+    <div className="project flex flex-col justify-center h-screen">
       <div className="grid grid-cols-6 gap-20 md:max-h-[70%]">
         <div className="col-span-2">
           <div className="flex-col gap-8 hidden md:flex">
@@ -54,6 +54,5 @@ export default function Project() {
         </div>
       </div>
     </div>
-    // </div>
   );
 }

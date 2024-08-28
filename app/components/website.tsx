@@ -13,18 +13,12 @@ import { useGSAP } from "@gsap/react";
 import { useEffect, useState } from "react";
 
 export default function Website() {
-  const [data, setData] = useState<Record<string, any>[]>([]);
-
-  useGSAP(() => {
-    if (data.length > 0) {
-      gsap.from(".contribute-number", {
-        textContent: 0,
-        ease: "easeIn",
-        duration: 3,
-        snap: { textContent: 1 },
-      });
-    }
-  }, [data]);
+  const [data, setData] = useState<Record<string, any>[]>([
+    { Commits: 500 },
+    { Projects: 20 },
+    { Days: 1000 },
+    { Favourite: "Node.js" },
+  ]);
 
   useEffect(() => {
     async function getContributions(token: string, username: string) {
@@ -101,30 +95,25 @@ export default function Website() {
   return (
     <>
       <div className="flex lg:flex-1 flex-row justify-between lg:justify-normal gap-20 h-full px-[5%] md:px-0 transition-all md:pl-2 items-end">
-        <div className="size-16 flex flex-col justify-end animate-fadeup">
-          <a
-            href="https://github.com/phamvant"
-            target="_blank"
-            className="cursor-none"
-          >
+        <div className="size-16 flex flex-col justify-end animate-fadeup cursor-pointer">
+          <a href="https://github.com/phamvant" target="_blank">
             <RiGithubFill className="size-12 hover:size-14 rounded-full transition-all duration-200" />
           </a>
         </div>
-        <div className="size-16 flex flex-col justify-end animate-fadeup">
+        <div className="size-16 flex flex-col justify-end animate-fadeup cursor-pointer">
           <a
             href="https://www.linkedin.com/in/pham-van-thuan-527778256/"
             target="_blank"
-            className="cursor-none"
           >
             <RiLinkedinFill className="size-12 hover:size-14 rounded-full transition-all duration-200" />
           </a>
         </div>
-        <div className="size-16 flex flex-col justify-end animate-fadeup z-20">
-          <a href="mailto:pham.t.286.01@gmail.com" className="cursor-none">
+        <div className="size-16 flex flex-col justify-end animate-fadeup cursor-pointer z-20">
+          <a href="mailto:pham.t.286.01@gmail.com">
             <MdAlternateEmail className="size-12 hover:size-14 rounded-full transition-all duration-200" />
           </a>
         </div>
-        <div className="size-16 flex flex-col justify-end animate-fadeup z-20">
+        <div className="size-16 flex flex-col justify-end animate-fadeup cursor-pointer z-20">
           <RiTwitterFill className="size-12 hover:size-14 rounded-full transition-all duration-200" />
         </div>
       </div>

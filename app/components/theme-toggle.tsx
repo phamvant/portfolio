@@ -1,5 +1,3 @@
-"use client";
-
 import { useTheme } from "next-themes";
 
 export default function ThemeToggle() {
@@ -19,7 +17,7 @@ export default function ThemeToggle() {
           return setTheme("dark");
         }}
       />
-      <label className="relative cursor-none p-2" htmlFor="light-switch">
+      <label className="relative p-2 cursor-pointer" htmlFor="light-switch">
         <svg
           className="dark:hidden"
           width="16"

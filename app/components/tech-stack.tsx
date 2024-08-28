@@ -13,7 +13,7 @@ export default function TechStack() {
       return (direction = 1) => (min + delta * Math.random()) * direction;
     }
 
-    const randomX = random(10, 100);
+    const randomX = random(10, 20);
     const randomY = random(0, 150);
     const randomTime = random(3, 5);
     const randomAngle = random(8, 12);
@@ -63,9 +63,9 @@ export default function TechStack() {
   });
 
   return (
-    <div className="flex flex-col justify-center flex-wrap">
+    <div className="flex flex-col justify-center flex-wrap ">
       <div
-        className="flex justify-between md:justify-center size-12 md:size-16"
+        className="flex justify-between md:justify-center size-16 md:size-16"
         ref={iconRef}
       >
         <img

@@ -6,11 +6,13 @@ import Project from "./components/project/project";
 
 export default function Home() {
   return (
-    <>
+    <div>
       <NavBar />
-      <Highlight />
-      <div className="h-[1px] bg-black dark:bg-white mx-20"></div>
-      <Project />
-    </>
+      <div className="md:px-[5%] xl:px-[15%]">
+        <Highlight />
+        <div className="h-[1px] bg-black dark:bg-white"></div>
+        <Project />
+      </div>
+    </div>
   );
 }

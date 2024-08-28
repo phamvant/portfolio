@@ -15,29 +15,6 @@ export default function NavBar() {
     gsap.timeline({ reversed: true }),
   );
 
-  const mm = gsap.matchMedia();
-
-  useGSAP(() => {
-    mm.add("(max-width: 760px)", () => {
-      navDropdown
-        .to(navRef.current, {
-          height: "350%",
-          duration: 0.5,
-        })
-        .from(
-          ".nav-content",
-          {
-            x: -10,
-            opacity: 0,
-            stagger: {
-              each: 0.1,
-            },
-          },
-          "<",
-        );
-    });
-  }, []);
-
   useEffect(() => {
     if (navDropdown) {
       navDropdown.reversed(burger);
@@ -54,7 +31,7 @@ export default function NavBar() {
     <div className="relative">
       <div className="md:hidden flex-1"></div>
 
-      <div className="fixed justify-center top-8 z-10 flex flex-row  flex-wrap md:flex-row items-center w-full h-16 md:px-[5%] xl:px-[10%] px-2">
+      <div className="fixed justify-center top-8 z-10 flex flex-row  flex-wrap md:flex-row items-center w-full h-16 md:px-[5%] xl:px-[15%] px-2">
         <div
           className=" md:justify-between md:flex w-full border-[1px] p-4 rounded-xl border-gray-600 backdrop-blur-md h-16 md:px-20"
           style={{ WebkitBackdropFilter: "5px" }}
@@ -71,7 +48,7 @@ export default function NavBar() {
           </div>
 
           <Link
-            to="top"
+            to="highlight"
             spy={true}
             smooth={true}
             duration={500}
@@ -81,12 +58,11 @@ export default function NavBar() {
           </Link>
           <div className="py-4 md:py-0 md:gap-12 gap-4 z-11 md:items-center flex flex-col md:flex-row mt-4 md:mt-0">
             <Link
-              to="timeline"
+              to="highlight"
               spy={true}
               smooth={true}
-              offset={800}
               duration={500}
-              className="nav-content hover:text-xl text-md lg:transition-all lg:duration-300 cursor-default lg:animate-fadedown"
+              className="nav-content hidden md:block hover:text-xl text-md lg:transition-all lg:duration-300 cursor-default lg:animate-fadedown"
             >
               Highlight
             </Link>
@@ -94,13 +70,12 @@ export default function NavBar() {
               to="project"
               spy={true}
               smooth={true}
-              // offset={800}
               duration={500}
-              className="nav-content hover:text-xl text-md lg:transition-all lg:duration-300 cursor-default lg:animate-fadedown"
+              className="nav-content hidden md:block hover:text-xl text-md lg:transition-all lg:duration-300 cursor-default lg:animate-fadedown"
             >
               Projects
             </Link>
-            <p className="nav-content hover:text-xl text-md lg:transition-all lg:duration-300 cursor-default lg:animate-fadedown">
+            <p className="nav-content hidden md:block hover:text-xl text-md lg:transition-all lg:duration-300 cursor-default lg:animate-fadedown">
               Contact
             </p>
             <div className="hidden md:block">

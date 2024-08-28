@@ -26,45 +26,8 @@ const list = [
 ];
 
 export default function Timeline() {
-  useGSAP(() => {
-    gsap.from(".hl-img", {
-      y: -500,
-      x: 200,
-      scrollTrigger: {
-        trigger: ".timeline-container",
-        start: "right right",
-        scrub: true,
-      },
-    });
-
-    gsap.from(".event", {
-      y: -500,
-      scrollTrigger: {
-        trigger: ".timeline-container",
-        start: "right right",
-        scrub: true,
-      },
-      stagger: 0.1,
-    });
-
-    gsap.from(".event-mask", {
-      y: -500,
-      scrollTrigger: {
-        trigger: ".timeline-container",
-        start: "right right",
-        scrub: true,
-      },
-      stagger: 0.1,
-    });
-  });
-
   return (
-    <div className="flex flex-col justify-center md:mb-0 timeline-container wrapper w-[100%] h-[100%]">
-      {/* <img
-        src="/bg.svg"
-        alt="bg"
-        className="fixed left-[16%] md:left-[10.5%] z-0 w-3/4 opacity-10"
-      /> */}
+    <div className="flex flex-col justify-center md:mb-0 timeline-container">
       <div
         className="flex justify-center gap-20 px-[5%] xl:px-[10%] max-h-[70%] mt-20"
         id="timeline"
