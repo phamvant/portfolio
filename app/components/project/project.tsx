@@ -25,7 +25,7 @@ export default function Project() {
   const [curLang, setCurLang] = useState<ProjectInfo[]>(jsPrjs);
 
   return (
-    <div className="project flex flex-col justify-center h-screen">
+    <div className="project flex flex-col justify-center h-screen bg-blue-100/60 md:px-[5%] xl:px-[15%]">
       <div className="grid grid-cols-6 gap-20 md:max-h-[70%]">
         <div className="col-span-2">
           <div className="flex-col gap-8 hidden md:flex">

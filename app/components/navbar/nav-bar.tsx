@@ -31,9 +31,9 @@ export default function NavBar() {
     <div className="relative">
       <div className="md:hidden flex-1"></div>
 
-      <div className="fixed justify-center top-8 z-10 flex flex-row  flex-wrap md:flex-row items-center w-full h-16 md:px-[5%] xl:px-[15%] px-2">
+      <div className="absolute justify-center top-8 z-10 flex flex-row  flex-wrap md:flex-row items-center w-full h-16 md:px-[5%] xl:px-[20%] px-2">
         <div
-          className=" md:justify-between md:flex w-full border-[1px] p-4 rounded-xl border-gray-600 backdrop-blur-md h-16 md:px-20"
+          className="md:justify-between md:flex w-full py-16 rounded-xl backdrop-blur-md h-16"
           style={{ WebkitBackdropFilter: "5px" }}
           ref={navRef}
         >

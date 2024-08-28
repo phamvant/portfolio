@@ -125,7 +125,7 @@ export default function Website() {
                 {Object.keys(val)[0]}
               </div>
               <div
-                className={`lg:text-4xl text-3xl font-semibold hover:text-4xl lg:hover:text-5xl transition-all duration-300 animate-fadeup h-8 items-end ${index < 3 ? "contribute-number" : ""}`}
+                className={`text-3xl font-semibold hover:text-4xl transition-all duration-300 animate-fadeup h-8 items-end ${index < 3 ? "contribute-number" : ""}`}
               >
                 {Object.values(val)[0]}
               </div>

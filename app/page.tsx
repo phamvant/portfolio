@@ -8,11 +8,8 @@ export default function Home() {
   return (
     <div>
       <NavBar />
-      <div className="md:px-[5%] xl:px-[15%]">
-        <Highlight />
-        <div className="h-[1px] bg-black dark:bg-white"></div>
-        <Project />
-      </div>
+      <Highlight />
+      <Project />
     </div>
   );
 }
