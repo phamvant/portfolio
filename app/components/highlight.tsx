@@ -54,11 +54,10 @@ export default function Highlight() {
             <TechStack />
           </div>
         </div>
-        <div className="hidden md:flex lg:px-4 lg:flex-row flex-col-reverse w-full gap-20 mb-20 lg:mb-0 md:flex">
+        <div className="hidden md:flex w-full mb-20 lg:mb-0 gap-20">
           <Website />
         </div>
       </div>
-      {/* <Timeline /> */}
     </div>
   );
 }

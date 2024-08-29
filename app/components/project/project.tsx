@@ -26,9 +26,27 @@ export default function Project() {
 
   return (
     <div className="project flex flex-col justify-center h-screen bg-blue-100/60 md:px-[5%] xl:px-[20%]">
-      <div className="w-full flex flex-wrap gap-10 *:min-w-[400px] *:flex-1 *:bg-white">
-        <div className="">a</div>
-        <div className="">b</div>
+      <div className="w-full flex flex-wrap gap-10 *:min-w-[400px] *:flex-1">
+        <div className="flex flex-col gap-10">
+          <p className="text-4xl">ComputeHub</p>
+          <p
+            className="text-xl w-3/4 border-2 border-slate-300 p-4 
+          rounded-2xl shadow-xl hover:shadow-none transition-shadow duration-300"
+          >
+            Node.js project for sharing computing power using a web browser with
+            Pando Computing core module.
+          </p>
+        </div>
+        <div className="relative group *:absolute *:rounded-2xl *:shadow-2xl *:transition-all *:duration-300">
+          <img
+            src="/project/js/computehub.png"
+            className=" group-hover:scale-110 group-hover:translate-y-40"
+          />
+          <img
+            src="/project/js/computehub.png"
+            className=" group-hover:scale-110 translate-x-10 group-hover:translate-x-0 -translate-y-10 group-hover:-translate-y-64"
+          />
+        </div>
       </div>
     </div>
   );
