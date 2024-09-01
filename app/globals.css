@@ -28,6 +28,7 @@ body {
 
 body {
   /* cursor: none; */
+  overflow-x: hidden;
   color: rgb(var(--foreground-rgb));
   font-family: "Courier Prime", monospace;
   background: rgb(var(--background));

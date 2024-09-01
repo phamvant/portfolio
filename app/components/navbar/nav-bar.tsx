@@ -55,26 +55,26 @@ export default function NavBar() {
         >
           THUAN PHAM.
         </Link>
-        <div className="hidden md:flex py-4 md:py-0 md:gap-12 gap-4 z-11 md:items-center flex flex-col md:flex-row mt-4 md:mt-0">
+        <div className="hidden md:flex py-4 md:py-0 md:gap-12 gap-4 z-11 md:items-center flex-col md:flex-row mt-4 md:mt-0">
           <Link
             to="highlight"
             spy={true}
             smooth={true}
             duration={500}
-            className="cursor-pointer nav-content hidden md:block hover:text-xl text-md lg:transition-all lg:duration-300 cursor-default lg:animate-fadedown"
+            className="cursor-pointer nav-content hidden md:block hover:text-xl text-md lg:transition-all lg:duration-300 lg:animate-fadedown"
           >
             Highlight
           </Link>
           <Link
-            to="project"
+            to="project-1"
             spy={true}
             smooth={true}
             duration={500}
-            className="cursor-pointer nav-content hidden md:block hover:text-xl text-md lg:transition-all lg:duration-300 cursor-default lg:animate-fadedown"
+            className="cursor-pointer nav-content hidden md:block hover:text-xl text-md lg:transition-all lg:duration-300 lg:animate-fadedown"
           >
             Projects
           </Link>
-          <p className="cursor-pointer nav-content hidden md:block hover:text-xl text-md lg:transition-all lg:duration-300 cursor-default lg:animate-fadedown">
+          <p className="cursor-pointer nav-content hidden md:block hover:text-xl text-md lg:transition-all lg:duration-300 lg:animate-fadedown">
             Contact
           </p>
           <div className="hidden md:block">
