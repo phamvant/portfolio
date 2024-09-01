@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ProjectInfo } from "./project-card";
 import { jsPrjs } from "./data";
+import { LuArrowUpRight } from "react-icons/lu";
 
 export interface LangProps {
   color: string;
@@ -37,15 +38,19 @@ export default function Project() {
             Node.js project for sharing computing power using a web browser with
             Pando Computing core module.
           </p>
+          <div className="flex gap-2 items-center cursor-pointer hover:underline animate-bounce">
+            How I built this
+            <LuArrowUpRight />
+          </div>
         </div>
         <div className="relative group *:absolute *:left-10 *:rounded-2xl *:shadow-2xl *:transition-all *:duration-300 pb-64">
           <img
             src="/project/js/computehub.png"
-            className="w-3/4 lg:w-full lg:group-hover:scale-110 lg:group-hover:translate-y-40"
+            className="w-3/4 lg:w-full lg:group-hover:scale-110 translate-x-10 lg:group-hover:translate-x-52"
           />
           <img
             src="/project/js/computehub.png"
-            className="w-3/4 lg:w-full object-cover lg:group-hover:scale-110 translate-x-10 lg:group-hover:translate-x-0 -translate-y-10 lg:group-hover:-translate-y-52"
+            className="w-3/4 lg:w-full object-cover lg:group-hover:scale-50 -translate-y-10 lg:group-hover:-translate-x-60"
           />
         </div>
       </div>

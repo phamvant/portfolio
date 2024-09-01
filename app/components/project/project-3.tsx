@@ -1,3 +1,5 @@
+import { LuArrowUpRight } from "react-icons/lu";
+
 export default function Project3() {
   return (
     <div>
@@ -11,6 +13,10 @@ export default function Project3() {
           >
             A platform for young professionals and students to share experiences
           </p>
+          <div className="flex gap-2 items-center cursor-pointer hover:underline animate-bounce">
+            How I built this
+            <LuArrowUpRight />
+          </div>
         </div>
 
         <div className="relative group *:lg:hover:scale-[75%] *:absolute *:left-10 *:rounded-2xl *:shadow-2xl *:transition-all *:duration-300 pb-64">

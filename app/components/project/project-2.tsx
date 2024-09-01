@@ -1,3 +1,5 @@
+import { LuArrowUpRight } from "react-icons/lu";
+
 export default function Project2() {
   return (
     <div className="border-t-2">
@@ -12,7 +14,7 @@ export default function Project2() {
           />
           <img
             src="/project/lychie/2.jpg"
-            className="w-3/4 lg:w-full object-cover translate-x-5 lg:-translate-x-10 -translate-y-10 lg:group-hover:-translate-y-64 lg:group-hover:translate-x-52"
+            className="w-3/4 lg:w-full object-cover translate-x-5 lg:-translate-x-10 -translate-y-10 lg:group-hover:-translate-y-64 lg:group-hover:translate-x-44"
           />
           <img
             src="/project/lychie/1.jpg"
@@ -26,10 +28,13 @@ export default function Project2() {
             className="text-xl w-full md:w-3/4 border-2 border-slate-300 p-4 
             rounded-2xl shadow-xl hover:shadow-none transition-shadow duration-300"
           >
-            Developed a comprehensive E-commerce Store Management System that
-            includes product and inventory management, order processing,
-            customer relationship management, and payment processing.
+            Developed a comprehensive E-commerce Store Management to manage my
+            store
           </p>
+          <div className="flex gap-2 items-center cursor-pointer hover:underline animate-bounce">
+            How I built this
+            <LuArrowUpRight />
+          </div>
         </div>
       </div>
       <div className="flex flex-col justify-center items-center bg-white relative">
