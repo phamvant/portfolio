@@ -74,7 +74,7 @@ export default function NavBar() {
           >
             Projects
           </Link>
-          <p className="cursor-pointer nav-content hidden md:block hover:text-xl text-md lg:transition-all lg:duration-300 lg:animate-fadedown">
+          <p className="cursor-pointer nav-content hidden md:block hover:text-md text-md lg:transition-all lg:duration-300 lg:animate-fadedown">
             Contact
           </p>
           <div className="hidden md:block">

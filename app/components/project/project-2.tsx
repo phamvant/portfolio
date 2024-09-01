@@ -20,7 +20,7 @@ export default function Project2() {
           />
         </div>
         <div className="flex flex-col items-end gap-10 px-4 md:px-0">
-          <p className="text-3xl text-blue-400">2023</p>
+          <p className="text-3xl text-blue-400">2024</p>
           <p className="text-4xl text-right">Lychie Store management</p>
           <p
             className="text-xl w-full md:w-3/4 border-2 border-slate-300 p-4 
@@ -33,7 +33,7 @@ export default function Project2() {
         </div>
       </div>
       <div className="flex flex-col justify-center items-center bg-white relative">
-        <div className="flex flex-col justify-center items-center md:px-[5%] xl:px-[20%] py-24 w-3/4">
+        <div className="flex flex-col justify-center items-center md:px-[5%] xl:px-[20%] py-32 w-3/4">
           <img
             src="/ecom.gif"
             className="object-cover rounded-xl shadow-2xl hover:shadow-none transition-shadow duration-300"

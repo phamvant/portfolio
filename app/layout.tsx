@@ -20,9 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={courier.className}>
-        <Theme>{children}</Theme>
-      </body>
+      <body className={courier.className}>{children}</body>
     </html>
   );
 }

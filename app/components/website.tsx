@@ -15,7 +15,6 @@ import { useEffect, useState } from "react";
 export default function Website() {
   const [data, setData] = useState<Record<string, any>[]>([
     { Commits: 500 },
-    { Projects: 20 },
     { Days: 1000 },
     { Favourite: "Node.js" },
   ]);
@@ -63,9 +62,6 @@ export default function Website() {
             Commits:
               resJson?.data.user.contributionsCollection.contributionCalendar
                 .totalContributions,
-          },
-          {
-            Projects: 12,
           },
           {
             Days: resJson?.data.user.contributionsCollection.contributionCalendar.weeks.reduce(
