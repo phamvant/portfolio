@@ -10,11 +10,11 @@ export default function Project2() {
           </p>
           <img
             src="/project/lychie/3.jpg"
-            className="w-3/4 lg:w-full lg:group-hover:-translate-y-60 lg:group-hover:-translate-x-80"
+            className="w-3/4 lg:w-full lg:group-hover:-translate-y-56 lg:group-hover:-translate-x-80"
           />
           <img
             src="/project/lychie/2.jpg"
-            className="w-3/4 lg:w-full object-cover translate-x-5 lg:-translate-x-10 -translate-y-10 lg:group-hover:-translate-y-64 lg:group-hover:translate-x-44"
+            className="w-3/4 lg:w-full object-cover translate-x-5 lg:-translate-x-10 -translate-y-10 lg:group-hover:-translate-y-60 lg:group-hover:translate-x-44"
           />
           <img
             src="/project/lychie/1.jpg"
@@ -23,7 +23,7 @@ export default function Project2() {
         </div>
         <div className="flex flex-col items-end gap-10 px-4 md:px-0">
           <p className="text-3xl text-blue-400">2024</p>
-          <p className="text-4xl text-right">Lychie Store management</p>
+          <p className="text-4xl text-right">Store management</p>
           <p
             className="text-xl w-full md:w-3/4 border-2 border-slate-300 p-4 
             rounded-2xl shadow-xl hover:shadow-none transition-shadow duration-300"

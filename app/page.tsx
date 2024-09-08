@@ -9,8 +9,8 @@ import Project3 from "./components/project/project-3";
 export default function Home() {
   return (
     <div>
-      <NavBar />
-      <div className="h-screen">
+      <div className="h-screen flex flex-col">
+        <NavBar />
         <Highlight />
       </div>
       <Project />

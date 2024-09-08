@@ -46,11 +46,11 @@ export default function Project() {
         <div className="relative group *:absolute *:left-10 *:rounded-2xl *:shadow-2xl *:transition-all *:duration-300 pb-64">
           <img
             src="/project/js/computehub.png"
-            className="w-3/4 lg:w-full lg:group-hover:scale-110 translate-x-10 lg:group-hover:translate-x-52"
+            className="w-3/4 lg:w-full lg:group-hover:scale-110 translate-x-10 lg:group-hover:-translate-x-40"
           />
           <img
             src="/project/js/computehub.png"
-            className="w-3/4 lg:w-full object-cover lg:group-hover:scale-50 -translate-y-10 lg:group-hover:-translate-x-60"
+            className="w-3/4 lg:w-full object-cover lg:group-hover:scale-50 -translate-y-10 lg:group-hover:translate-x-80 lg:group-hover:translate-y-4"
           />
         </div>
       </div>

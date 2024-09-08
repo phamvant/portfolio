@@ -29,7 +29,7 @@ export default function Highlight() {
   }, []);
 
   return (
-    <div className="highlight flex flex-col justify-end md:justify-center md:px-[5%] xl:px-[20%] h-full bg-blue-100/60">
+    <div className="highlight flex flex-col justify-end md:justify-center md:px-[5%] xl:px-[20%] h-full bg-blue-100/60 md:pb-32">
       <div className="flex flex-col flex-wrap justify-end md:justify-center md:items-center gap-10 md:gap-24 pb-10 md:pb-0">
         <div className="flex flex-wrap w-full mt-20 gap-20 md:gap-0" id="top">
           <div className="md:flex-1 hover:shadow-sm shadow-2xl transition-all duration-300 border-[1px] border-gray-500 rounded-xl mx-4 md:mx-0">
