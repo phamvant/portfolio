@@ -4,21 +4,21 @@ export default function Project2() {
   return (
     <div className="border-t-2">
       <div className="project-1 py-24 md:pt-44 w-full flex flex-wrap-reverse gap-52 lg:gap-10 *:min-w-[300px] *:flex-1 md:px-[5%] xl:px-[20%] bg-blue-100/60">
-        <div className="relative group *:lg:hover:scale-[60%] *:absolute *:left-10 *:rounded-2xl *:shadow-2xl *:transition-all *:duration-300 pb-64">
+        <div className="relative group *:lg:scale-[60%]  *:absolute *:left-10 *:rounded-2xl *:shadow-2xl *:transition-all *:duration-300 pb-64">
           <p className="-translate-y-40 translate-x-32 group-hover:scale-0 transition-all animate-pulse duration-75 font-bold border-2 border-black p-2 hidden lg:block">
             Hover
           </p>
           <img
             src="/project/lychie/3.jpg"
-            className="w-3/4 lg:w-full lg:group-hover:-translate-y-56 lg:group-hover:-translate-x-80"
+            className="w-3/4 lg:w-full lg:group-hover:-translate-y-64 lg:group-hover:-translate-x-80"
           />
           <img
             src="/project/lychie/2.jpg"
-            className="w-3/4 lg:w-full object-cover translate-x-5 lg:-translate-x-10 -translate-y-10 lg:group-hover:-translate-y-60 lg:group-hover:translate-x-44"
+            className="w-3/4 lg:w-full object-cover translate-x-5 lg:-translate-x-10 -translate-y-10 lg:group-hover:-translate-y-64 lg:group-hover:translate-x-40"
           />
           <img
             src="/project/lychie/1.jpg"
-            className="w-3/4 lg:w-full object-cover translate-x-10 lg:-translate-x-20 -translate-y-20 lg:group-hover:-translate-y-64"
+            className="w-3/4 lg:w-full object-cover translate-x-10 lg:-translate-x-20 -translate-y-20 lg:group-hover:-translate-y-72"
           />
         </div>
         <div className="flex flex-col items-end gap-10 px-4 md:px-0">

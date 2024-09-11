@@ -90,7 +90,7 @@ export default function Website() {
 
   return (
     <>
-      <div className="flex lg:flex-1 flex-row justify-around gap-8 md:gap-10 h-full transition-all items-end">
+      <div className="flex lg:flex-1 flex-row justify-around gap-8 md:gap-10 h-full transition-all items-end pb-10">
         <div className="size-16 flex flex-col justify-end animate-fadeup cursor-pointer">
           <a href="https://github.com/phamvant" target="_blank">
             <RiGithubFill className="size-12 hover:size-14 rounded-full transition-all duration-200" />

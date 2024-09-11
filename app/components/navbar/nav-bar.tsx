@@ -29,7 +29,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <div className="bg-blue-100/60 md:px-[5%] xl:px-[20%] justify-center z-10 flex flex-row  flex-wrap md:flex-row items-center w-screen pt-4 md:pt-32">
+    <div className=" md:px-[5%] xl:px-[20%] justify-center z-10 flex flex-row  flex-wrap md:flex-row items-center w-screen pt-4 md:pt-20">
       <div
         className="md:justify-between md:flex w-full px-4 py-4 md:py-0 rounded-xl backdrop-blur-md"
         style={{ WebkitBackdropFilter: "5px" }}
