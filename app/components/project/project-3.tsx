@@ -3,7 +3,7 @@ import { LuArrowUpRight } from "react-icons/lu";
 export default function Project3() {
   return (
     <div>
-      <div className="project-3 py-20 w-full flex flex-wrap gap-40 lg:gap-10 *:min-w-[300px] *:flex-1 md:px-[5%] xl:px-[20%] bg-white">
+      <div className="project-3 py-32 w-full flex flex-wrap gap-40 lg:gap-10 *:min-w-[300px] *:flex-1 md:px-[5%] xl:px-[20%] bg-white md:min-h-[60vh]">
         <div className="flex flex-col gap-10 px-4 md:px-0">
           <p className="text-3xl text-blue-400">2024</p>
           <p className="text-4xl">Dreamhacker</p>
