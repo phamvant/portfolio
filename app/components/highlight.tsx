@@ -19,11 +19,11 @@ export default function Highlight() {
     });
 
     titleTimeline.to(".hl-title", {
-      text: "I'm a Freelance Developer",
+      text: "私はフリーランス開発者",
       duration: 2,
     });
     titleTimeline.to(".hl-title", {
-      text: "I'm a Fullstack Developer",
+      text: "私はフールスタック開発者",
       duration: 2,
     });
   }, []);
@@ -37,18 +37,16 @@ export default function Highlight() {
             <div className="md:flex-1 hover:shadow-sm shadow-2xl transition-all duration-300 border-[1px] border-gray-500 rounded-xl mx-4 md:mx-0">
               <div className="p-4 xl:p-10 row-span-2 pointer-events-none">
                 <p className="max-w-[700px] mb-10 text-3xl font-extrabold leading-snug  hl-title md:leading-normal pointer-events-none animate-fadeup">
-                  I'm a Fullstack Developer
+                  私はフールスタック開発者
                 </p>
 
                 <div className="flex flex-col gap-6">
                   <p className="text-lg font-extralight max-w-fit hl-content pointer-events-none animate-fadeup">
-                    In Love With Node | AWS | Building Scalable Backends in
-                    Japan | Using Tech To Solve My Own Real Life Problems |
-                    Automation Enthusiast.
+                    Nodeが大好き｜AWS｜スケーラブルなバックエンドを建築｜テクノロジーで日常の課題を解決
+                    | 自動化マニア
                   </p>
                   <p className="text-lg font-extralight max-w-fit hl-content pointer-events-none animate-fadeup">
-                    I'm sharing everything I know about software through my
-                    blog.
+                    以下のブログでソフトウェアに関する知識を全て共有します。
                   </p>
                 </div>
               </div>

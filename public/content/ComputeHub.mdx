@@ -1,64 +1,54 @@
 
-# Distributed Computing System Using Browser-Based Workers
+# ブラウザベース分散コンピューティングシステム
 
 <div className="flex justify-center">
     <img src={"/project/js/computehub.png"} className="w-[50%]" />
 </div>
-The distributed computing system I developed leverages web browsers on various devices, such as phones and PCs, to solve complex problems. The system aims to reduce computation time by distributing tasks across a network of users. This project demonstrates the potential of harnessing idle browser resources for community-driven problem-solving.
 
-## System Overview
+複雑な問題を解決ため、スマートホンやPCなど様々なデバイスを利用するリアルタイム分散コンピューティングシステムを開発しました。目的は、インターネットでタスクを配って解決時間を短縮することです。このプロジェクトはアイドルデバイスの計算リソースを利用する可能性を示します。そこから、コミュニティ主導の解決問題システムを開発できるようになります。
 
-### Architecture
+## **システム概要**
 
-{/* Architecture Diagram */}
+### アーキテクチ
 
-The system is built using:
+- **Node.js** : バックエンドAPIとタスク配信のためです。
+- **Next.js** : ユーザインタフェース、同時に計算環境として担います。
+- **AWS** : ホスティングのためのインフラ, **EC2**, **ECR**, **R53** などのサービスを含まれています。
+- **MongoAtlat** : アプリケーションのデータと計算結果を保存するため。
+- **Docker** : サービスを簡単にデプロイ
+- **GithubAction** : CI/CD
 
-- **Node.js** for the backend API and task distribution
-- **Next.js** for the frontend interface where users interact and submit tasks
-- **AWS** infrastructure for hosting, including services like **EC2**, **ECR**, **R53**, ...
-- **MongoAtlat** for storing application data and compute result
-- **Docker** to containerize services for easy deployment
-- **GithubAction** CI/CD
+### 仕組み
 
-### How It Works
+1. **問題提出**: WebインタフェースのNext.jsを通じて、ユーザを問題を提出します。コードとインプットなどの仕様を含まれます。
+2. **タスク配信**: Node.jsで働くバックエンド 。PandoComputingというライブラリーのかげで、入力と実行コードを分割して、ワーカーに配信します。クライエントからエラーがあれば、自動的に他のノードにエラー入力を配信します。
+3. **ワーカーノード (ブラウザー)**:　ユーザーが登録したプロジェクトのURLを訪れると、ブラウザーがワーカーノードになります。 タークスをS3Bucketから取得して, バックエンドとのWebsocketコンネックションを作成します。それから、バックエンドからインプットを習得して、計算を実行して、バックエンドに送り返します。
+4. **結果集計**: バックエンドは結果を集まって、入力の順番に基づいて出力をソートします。定期的にデータベースに保存します。　
+5. **ユーザー報酬**: ユーザーが問題解決に対する貢献を追跡でき、報酬が与えられます。（未実装）
 
-1. **Problem Submission**: Users submit computational problems through a web interface built with Next.js.
-2. **Task Distribution**: The backend, powered by Node.js using Pando Computing, breaks the problem into smaller tasks.
-3. **Worker Nodes (Browsers)**: Each time a user visits the website, their browser becomes a worker node. It fetches tasks from the queue, processes them using JavaScript, and sends the results back to the server.
-4. **Result Aggregation**: The server collects and aggregates the results from multiple workers and combines them into the final solution.
-5. **User Rewards**: Users can track their contributions to solving problems, and they are rewarded with credits for successful task completions.
+## **技術的のハイライト**
 
-## Technical Highlights
-
-### Task Parallelization
+### タスク並列処理
 
 {/* Task Parallelization */}
 
-The system splits a problem into smaller chunks that can be processed independently. This ensures that even complex problems can be solved faster by utilizing the combined computing power of many distributed browsers.
+システムはワーカーに独立的に計算できる部分を配信します。デバイスによって、計算速度の違いがあるのに、いつも予想できる結果順序を受け取れます。
+元々、PandoComputingはCLIでだけ実行でき、並列処理できないツールでしたが、AWSでデプロイし、Next.JSアプリと組み合わせるようにできました。
 
-### Scalability
+## **チャレンジと学び**
 
-By leveraging AWS services such as EC2 for backend processing and RDS for database management, the system can scale dynamically based on the number of tasks and worker nodes available at any time.
-
-## Challenges and Learnings
-
-### Managing Task Distribution
+### スケーラビリティ
 
 {/* Challenges */}
 
-One of the key challenges was ensuring tasks were evenly distributed across browser workers and handling failures gracefully when browsers disconnected or tasks took too long to complete.
+アクセス流量によって、自動的にEC2の仮想機械が増やすところ困っています。
+さらに、かなり安定して動作できましたが、次の配信される値に影響を与えないようにエラー適用に処理することは必要です。
 
-### Security and Privacy Concerns
+### セキュリティ
 
 Processing tasks within users' browsers meant ensuring that no sensitive information was exposed. Implementing secure communication channels between browsers and the backend, along with anonymizing user data, was crucial.
 
-## Future Improvements
-
-- **Mobile Optimization**: Enhance the system to better utilize mobile browsers, ensuring tasks are processed without affecting user experience.
-- **Real-Time Collaboration**: Implement real-time collaboration features where multiple users can tackle parts of a problem in real-time, visualizing their progress on a shared dashboard.
-
-## Conclusion
+## **結論**
 
 {/* Conclusion Image */}
 

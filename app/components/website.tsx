@@ -1,15 +1,7 @@
 "use client";
 
 import { MdAlternateEmail } from "react-icons/md";
-import {
-  RiFacebookCircleFill,
-  RiGithubFill,
-  RiLinkedinFill,
-  RiTwitterFill,
-  RiXboxFill,
-} from "react-icons/ri";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { RiGithubFill, RiLinkedinFill, RiTwitterFill } from "react-icons/ri";
 import { useEffect, useState } from "react";
 
 export default function Website() {

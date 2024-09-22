@@ -61,7 +61,7 @@ export default function NavBar() {
             duration={500}
             className="cursor-pointer nav-content hidden md:block hover:text-xl text-md lg:transition-all lg:duration-300 lg:animate-fadedown"
           >
-            Highlight
+            ハイライト
           </Link>
           <Link
             to="project-1"
@@ -70,10 +70,10 @@ export default function NavBar() {
             duration={500}
             className="cursor-pointer nav-content hidden md:block hover:text-xl text-md lg:transition-all lg:duration-300 lg:animate-fadedown"
           >
-            Projects
+            プロジェクト
           </Link>
           <p className="cursor-pointer nav-content hidden md:block hover:text-md text-md lg:transition-all lg:duration-300 lg:animate-fadedown">
-            Contact
+            連絡
           </p>
           <div className="hidden md:block">
             <ThemeToggle />

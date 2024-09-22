@@ -7,13 +7,17 @@ export default function Project({ children }: { children: ReactNode }) {
       <div className="project-1 py-32 md:py-52 w-full flex flex-wrap gap-40 lg:gap-10 *:min-w-[300px] *:flex-1 md:px-[5%] xl:px-[20%] bg-white">
         <div className="flex flex-col gap-10 px-4 md:px-0">
           <p className="text-3xl text-blue-400">2023</p>
-          <p className="text-4xl">ComputeHub</p>
+          <p className="text-4xl">
+            ComputeHub
+            <br />
+            <br />
+            分散コンピューティング
+          </p>
           <p
             className="text-xl w-full md:w-3/4 border-2 border-slate-300 p-4 
           rounded-2xl shadow-xl hover:shadow-none transition-shadow duration-300"
           >
-            Node.js project for sharing computing power using a web browser with
-            Pando Computing core module.
+            ブラウザーでコンピューティングパワーを共有するプロジェクト。「PandoComputingコアモジュールを使用」
           </p>
           <Markdown>{children}</Markdown>
         </div>
