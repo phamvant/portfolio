@@ -1,11 +1,9 @@
 "use client";
 
 import gsap from "gsap";
-import NavBurger from "./burger-navbar";
 import { useEffect, useRef, useState } from "react";
 import ThemeToggle from "../theme-toggle";
 import { Link } from "react-scroll";
-import { useGSAP } from "@gsap/react";
 import { CiBurger } from "react-icons/ci";
 
 export default function NavBar() {

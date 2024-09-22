@@ -1,6 +1,16 @@
+import nextMDX from "@next/mdx";
+
+const withMDX = nextMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  optimizeFonts: false
+  optimizeFonts: false,
 };
 
-export default nextConfig;
+export default withMDX(nextConfig);

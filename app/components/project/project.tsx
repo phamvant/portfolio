@@ -1,30 +1,7 @@
-import { useState } from "react";
-import { ProjectInfo } from "./project-card";
-import { jsPrjs } from "./data";
-import { LuArrowUpRight } from "react-icons/lu";
+import { ReactNode } from "react";
+import Markdown from "./markdown";
 
-export interface LangProps {
-  color: string;
-  name: string;
-  projects: any;
-}
-
-function LangList({ lang, setState }: { lang: LangProps; setState: any }) {
-  return (
-    <li
-      className={`hover:bg-transparent ${lang.color} p-2 rounded border-[1px] size-fit transition duration-200 cursor-pointer`}
-      onClick={() => {
-        setState(lang.projects);
-      }}
-    >
-      {lang.name}
-    </li>
-  );
-}
-
-export default function Project() {
-  const [curLang, setCurLang] = useState<ProjectInfo[]>(jsPrjs);
-
+export default function Project({ children }: { children: ReactNode }) {
   return (
     <div>
       <div className="project-1 py-32 md:py-52 w-full flex flex-wrap gap-40 lg:gap-10 *:min-w-[300px] *:flex-1 md:px-[5%] xl:px-[20%] bg-white">
@@ -38,10 +15,7 @@ export default function Project() {
             Node.js project for sharing computing power using a web browser with
             Pando Computing core module.
           </p>
-          <div className="flex gap-2 items-center cursor-pointer hover:underline animate-bounce">
-            How I built this
-            <LuArrowUpRight />
-          </div>
+          <Markdown>{children}</Markdown>
         </div>
         <div className="relative group  *:absolute *:left-10 *:rounded-2xl *:shadow-2xl *:transition-all *:duration-300 pb-64">
           <img
@@ -73,6 +47,7 @@ export default function Project() {
           advanced algorithms to manage tasks, distribute resources, and
           optimize computing performance.
         </p>
+
         <div className="flex items-center">
           <a href="https://compute-hub-fe-vert.vercel.app/" target="_blank">
             <button className="bg-blue-400 w-fit p-2 px-4 rounded-3xl hover:underline">

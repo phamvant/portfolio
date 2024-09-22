@@ -1,0 +1,65 @@
+
+# Distributed Computing System Using Browser-Based Workers
+
+<div className="flex justify-center">
+    <img src={"/project/js/computehub.png"} className="w-[50%]" />
+</div>
+The distributed computing system I developed leverages web browsers on various devices, such as phones and PCs, to solve complex problems. The system aims to reduce computation time by distributing tasks across a network of users. This project demonstrates the potential of harnessing idle browser resources for community-driven problem-solving.
+
+## System Overview
+
+### Architecture
+
+{/* Architecture Diagram */}
+
+The system is built using:
+
+- **Node.js** for the backend API and task distribution
+- **Next.js** for the frontend interface where users interact and submit tasks
+- **AWS** infrastructure for hosting, including services like **EC2**, **ECR**, **R53**, ...
+- **MongoAtlat** for storing application data and compute result
+- **Docker** to containerize services for easy deployment
+- **GithubAction** CI/CD
+
+### How It Works
+
+1. **Problem Submission**: Users submit computational problems through a web interface built with Next.js.
+2. **Task Distribution**: The backend, powered by Node.js using Pando Computing, breaks the problem into smaller tasks.
+3. **Worker Nodes (Browsers)**: Each time a user visits the website, their browser becomes a worker node. It fetches tasks from the queue, processes them using JavaScript, and sends the results back to the server.
+4. **Result Aggregation**: The server collects and aggregates the results from multiple workers and combines them into the final solution.
+5. **User Rewards**: Users can track their contributions to solving problems, and they are rewarded with credits for successful task completions.
+
+## Technical Highlights
+
+### Task Parallelization
+
+{/* Task Parallelization */}
+
+The system splits a problem into smaller chunks that can be processed independently. This ensures that even complex problems can be solved faster by utilizing the combined computing power of many distributed browsers.
+
+### Scalability
+
+By leveraging AWS services such as EC2 for backend processing and RDS for database management, the system can scale dynamically based on the number of tasks and worker nodes available at any time.
+
+## Challenges and Learnings
+
+### Managing Task Distribution
+
+{/* Challenges */}
+
+One of the key challenges was ensuring tasks were evenly distributed across browser workers and handling failures gracefully when browsers disconnected or tasks took too long to complete.
+
+### Security and Privacy Concerns
+
+Processing tasks within users' browsers meant ensuring that no sensitive information was exposed. Implementing secure communication channels between browsers and the backend, along with anonymizing user data, was crucial.
+
+## Future Improvements
+
+- **Mobile Optimization**: Enhance the system to better utilize mobile browsers, ensuring tasks are processed without affecting user experience.
+- **Real-Time Collaboration**: Implement real-time collaboration features where multiple users can tackle parts of a problem in real-time, visualizing their progress on a shared dashboard.
+
+## Conclusion
+
+{/* Conclusion Image */}
+
+This distributed computing system showcases the power of combining web technologies and cloud infrastructure to build a platform that enables community-driven problem-solving. By utilizing browsers as worker nodes, the system reduces computational costs while engaging users in meaningful contributions.
