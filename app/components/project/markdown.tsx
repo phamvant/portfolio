@@ -28,7 +28,7 @@ const Markdown = ({ children }: { children: ReactNode }) => {
   return (
     <div>
       <button onClick={togglePopup}>
-        <div className="flex gap-2 items-center cursor-pointer hover:underline animate-bounce">
+        <div className="flex text-lg gap-2 items-center cursor-pointer hover:underline animate-bounce">
           開発過程
           <LuArrowUpRight />
         </div>

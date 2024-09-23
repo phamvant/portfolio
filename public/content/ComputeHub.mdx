@@ -1,5 +1,4 @@
-
-# ブラウザベース分散コンピューティングシステム
+# **ブラウザベース分散コンピューティングシステム**
 
 <div className="flex justify-center">
     <img src={"/project/js/computehub.png"} className="w-[50%]" />
@@ -14,6 +13,7 @@
 - **Node.js** : バックエンドAPIとタスク配信のためです。
 - **Next.js** : ユーザインタフェース、同時に計算環境として担います。
 - **AWS** : ホスティングのためのインフラ, **EC2**, **ECR**, **R53** などのサービスを含まれています。
+- **gRPC** : マイクロサービス間の有効性が高いコミュニケーションプロトコル
 - **MongoAtlat** : アプリケーションのデータと計算結果を保存するため。
 - **Docker** : サービスを簡単にデプロイ
 - **GithubAction** : CI/CD
@@ -46,10 +46,11 @@
 
 ### セキュリティ
 
-Processing tasks within users' browsers meant ensuring that no sensitive information was exposed. Implementing secure communication channels between browsers and the backend, along with anonymizing user data, was crucial.
+WSの代わりに、WSSを使用する予定です。データを二重暗号化されると、セキュリティが強化されます。
+しかし、コンピューティングリソースももッとかかるので、プロジェクトの管理者によって暗号化されます。
 
 ## **結論**
 
 {/* Conclusion Image */}
 
-This distributed computing system showcases the power of combining web technologies and cloud infrastructure to build a platform that enables community-driven problem-solving. By utilizing browsers as worker nodes, the system reduces computational costs while engaging users in meaningful contributions.
+このプロジェクトは、コミュニティ主導の問題解決システムを構築するもので、最新のWeb技術とクラウドインフラを組み合わせて実現可能性を示しています。

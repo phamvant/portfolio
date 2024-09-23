@@ -1,6 +1,8 @@
+import { ReactNode } from "react";
 import { LuArrowUpRight } from "react-icons/lu";
+import Markdown from "./markdown";
 
-export default function Project3() {
+export default function Project3({children}: {children: ReactNode}) {
   return (
     <div>
       <div className="project-3 py-32 w-full flex flex-wrap gap-40 lg:gap-10 *:min-w-[300px] *:flex-1 md:px-[5%] xl:px-[20%] bg-white md:min-h-[60vh]">
@@ -11,12 +13,11 @@ export default function Project3() {
             className="text-xl w-full md:w-3/4 border-2 border-slate-300 p-4 
           rounded-2xl shadow-xl hover:shadow-none transition-shadow duration-300"
           >
-            A platform for young professionals and students to share experiences
+            若い者向け留学体験共有Forum。<br/><br/>応募体験、勉強方法、大学評判等。
           </p>
-          <div className="flex gap-2 items-center cursor-pointer hover:underline animate-bounce">
-            How I built this
-            <LuArrowUpRight />
-          </div>
+          <Markdown>
+            {children}
+          </Markdown>
         </div>
 
         <div className="relative group *:lg:scale-[60%]  *:absolute *:left-10 *:rounded-2xl *:shadow-2xl *:transition-all *:duration-300 pb-64">

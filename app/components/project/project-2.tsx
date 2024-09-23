@@ -1,6 +1,7 @@
+import { ReactNode } from "react";
 import { LuArrowUpRight } from "react-icons/lu";
 
-export default function Project2() {
+export default function Project2({children}: {children: ReactNode}) {
   return (
     <div className="border-t-2">
       <div className="project-1 py-10 md:pt-44 w-full flex flex-wrap-reverse gap-52 lg:gap-10 *:min-w-[300px] *:flex-1 md:px-[5%] xl:px-[20%] bg-blue-100/60">
