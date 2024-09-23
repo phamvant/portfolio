@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Courier_Prime } from "next/font/google";
+import {  Courier_Prime, Rampart_One, Zen_Maru_Gothic } from "next/font/google";
 import "./globals.css";
-import Theme from "./providers/theme-provider";
-import Cursor from "./components/cursor";
-import NavBar from "./components/navbar/nav-bar";
 
-const inter = Inter({ subsets: ["latin"] });
-const courier = Courier_Prime({ subsets: ["latin"], weight: ["400", "700"] });
+const courier = Zen_Maru_Gothic({ subsets: ["latin"], weight: ["400", "700"] });
+
+export const RampartOneFont = Rampart_One({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Thuan's Portfolio",

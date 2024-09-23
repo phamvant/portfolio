@@ -3,6 +3,12 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger, TextPlugin } from "gsap/all";
+import {   Rampart_One } from "next/font/google";
+
+export const RampartOneFont = Rampart_One({
+  weight: "400",
+  subsets: ["latin"],
+})
 
 import TechStack from "./tech-stack";
 import Website from "./website";
@@ -36,7 +42,7 @@ export default function Highlight() {
           <div className="flex flex-wrap w-full mt-10 gap-20 md:gap-0" id="top">
             <div className="md:flex-1 hover:shadow-sm shadow-2xl transition-all duration-300 border-[1px] border-gray-500 rounded-xl mx-4 md:mx-0">
               <div className="p-4 xl:p-10 row-span-2 pointer-events-none">
-                <p className="max-w-[700px] mb-10 text-3xl font-extrabold leading-snug  hl-title md:leading-normal pointer-events-none animate-fadeup">
+                <p className={`${RampartOneFont.className} max-w-[699px] mb-10 text-3xl font-extrabold leading-snug  hl-title md:leading-normal pointer-events-none animate-fadeup`}>
                   私はフールスタック開発者
                 </p>
 

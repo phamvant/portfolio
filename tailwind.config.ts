@@ -6,7 +6,10 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
+  theme: { 
+      fontFamily: {
+        RampartOne: ["var(--font-RampartOne)"],
+      },
     extend: {
       keyframes: {
         fadedown: {
