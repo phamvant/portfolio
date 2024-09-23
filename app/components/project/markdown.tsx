@@ -1,6 +1,5 @@
 "use client";
 
-import { MDXProps } from "mdx/types";
 import { ReactNode, useEffect, useState } from "react";
 
 import { LuArrowUpRight } from "react-icons/lu";
@@ -52,7 +51,7 @@ const Markdown = ({ children }: { children: ReactNode }) => {
             ></button>
           </div>
 
-          <div className="prose-base md:px-20 md:py-6">{children}</div>
+          <div className="prose-base md:px-20 md:py-6 text-lg">{children}</div>
         </div>
       </div>
     </div>

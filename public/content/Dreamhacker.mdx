@@ -1,5 +1,81 @@
 # **若い者向け留学体験共有Forum**
 
 <div className="flex justify-center">
-    <img src={"/project/dreamhacker/pc.png"} />
+    <img src={"/project/dreamhacker/pc.png"} width="70%" />
 </div>
+
+ベトナムの専門職業人のため、国内的なオンラインおよびオフラインコンミュウにティプラットフォームを建築しており、個人的および職業上の目標を達成することを支援し、メンバー間の長期的な信頼を育てることをもく目的としています。
+現在、留学体験に共有することに専念しています。
+
+## **システム概要**
+
+### アーキテクチャ
+
+- **Node.js** : バックエンドAPI。
+- **Next.js** : ユーザインタフェース。
+- **AWS** : ホスティングのためのインフラ, **EC2**, **ECR**, **R53**, **RDS**などのサービスを含まれています。
+- **NGINX** : ロードバランス, Web Server
+- **Docker** : サービスをデプロイ
+- **GitlabCI** : CI/CD
+
+### 仕組み
+
+
+- ブログの基本的な機能が含まれています。
+- 世の中の有名なフォーラムから情報や投稿が集まられます。
+
+## **開発過程**
+
+### **1. 技術選択**
+
+- **開発言語** : JavaScriptに集中しているため、Node.jsとNext.jsを選びました。同じ言語を使用することで、開発時間を短縮することができています。
+
+- **データベース (PostgreSQL)** : 一番気に入って、機能豊富なRelationDatabaseデータベースを使うことをしました。
+NoSQLを使ったら実装が簡単になるのに、誰がかNoSQLを一番学習法がSQLを学ぶことだとってた。
+
+<div className="flex justify-center">
+    <img src={"/project/dreamhacker/db.png"} width="70%" />
+</div>
+
+- **Amazon Web Services** :
+- **- RDS** : 以前が使ったことがありますが、このプロジェクトのデータベースを作成した後、作成するところに自動的にEC2インスタンスを接続するセキュリティーグループを作成することができると気づきました。
+
+<div className="flex justify-center">
+    <img src={"/project/dreamhacker/db-ec2.png"} width="70%" />
+</div>
+
+- ・クライエントから接続を作成するため、EC2のSSHキーが必要です。
+
+<div className="flex justify-center">
+    <img src={"/project/dreamhacker/db-ssh.png"} width="40%" />
+</div>
+
+- ・Node.JSから接続を作成するため、証明書も必要です。AWSのサイトからRDSの証明証をダウンロードできます。
+
+``` ts
+const postgresSingleton = () => {
+  return new pg.Pool({
+    ssl:
+      config.ENV === "production"
+        ? {
+            ca: fs.readFileSync("./cert/rds-combined-ca-bundle.pem"),
+          }
+        : false,
+  });
+};
+```
+
+- ・EC2からテーブルスキマを適用するため、BashScriptを作成しました。もっと複雑ですが、
+
+``` bash
+#!/bin/bash
+PASSWORD=""
+export PGPASSWORD=$PASSWORD
+schema="database/schema"
+for file in $schema/*.sql
+do
+        echo "executing $file..."
+        psql -h $HOST -p $PORT -U $USER -d $DATABASE -f $file
+done
+unset PGPASSWORD
+```
