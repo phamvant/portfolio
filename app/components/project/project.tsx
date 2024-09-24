@@ -23,12 +23,12 @@ export default function Project({ children }: { children: ReactNode }) {
         </div>
         <div className="relative group  *:absolute *:left-10 *:rounded-2xl *:shadow-2xl *:transition-all *:duration-300 pb-64">
           <img
-            src="/project/js/computehub.png"
+            src="/project/dreamhacker/monitor_1.png"
             className="w-3/4 lg:w-full lg:group-hover:scale-110 translate-x-10 lg:group-hover:-translate-x-[10%]"
           />
           <img
             src="/project/js/computehub.png"
-            className="w-3/4 lg:w-full object-cover lg:group-hover:scale-50  lg:group-hover:translate-x-[75%] lg:group-hover:translate-y-4"
+            className="w-4/5 lg:w-full object-cover lg:group-hover:scale-50  lg:group-hover:translate-x-[75%] lg:group-hover:translate-y-4"
           />
         </div>
       </div>
@@ -42,20 +42,13 @@ export default function Project({ children }: { children: ReactNode }) {
       </div>
       <div className="flex flex-wrap h-1/4 bg-white px-[5%] xl:px-[20%] py-20 justify-center text-lg gap-10">
         <p className="w-full lg:w-3/4">
-          The proposed solution is to build a volunteer computing system that
-          allows individuals to contribute their computing power through
-          personal devices such as computers, laptops, and mobile phones. The
-          system will provide a user-friendly interface that is simple and easy
-          to use, enabling volunteers to register, provide computing power, and
-          participate in research projects. At the same time, it will use
-          advanced algorithms to manage tasks, distribute resources, and
-          optimize computing performance.
+          提案された解決策は、個人がコンピュータ、ノートパソコン、モバイルフォンなどの個人デバイスを通じて計算能力を提供できるボランティアコンピューティングシステムを構築することです。このシステムは、ボランティアが登録し、計算能力を提供し、研究プロジェクトに参加できるように、シンプルで使いやすいユーザーインターフェースを提供します。同時に、高度なアルゴリズムを使用してタスクを管理し、リソースを分配し、計算パフォーマンスを最適化します。
         </p>
 
         <div className="flex items-center">
           <a href="https://compute-hub-fe-vert.vercel.app/" target="_blank">
             <button className="bg-blue-400 w-fit p-2 px-4 rounded-3xl hover:underline">
-              View Page
+              ページを開く
             </button>
           </a>
         </div>

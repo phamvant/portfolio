@@ -112,8 +112,7 @@ COPY --from=development /usr/src/app/dist ./dist
 CMD ["node", "dist/index.js"]
 ```
 
-- ・環境準備ができた後、GithubActionでCI/CDを設定します。
-まず、実行環境を定義します
+- ・環境準備ができた後、GithubActionでCI/CDを設定します。まず、実行環境を定義します
 
 ``` yml
 name: Deploy to Amazon ECS
@@ -127,8 +126,8 @@ env:
   CONTAINER_NAME: # set this to the name of the container in the
 ```
 
-- ・次、ビルドとプッシュ過程
-まず、実行環境を定義します
+- ・次、ビルドとプッシュ過程します。mainブランチにプッシュすると、アプリがビルドして、ECRにプッシュします。
+
 
 ``` yml
 jobs:
@@ -162,3 +161,81 @@ jobs:
           docker push .dkr.ecr.ap-northeast-1.amazonaws.com/dreamhacker:latest
           echo "image=$ECR_REGISTRY:latest" >> $GITHUB_OUTPUTname: Deploy to Amazon ECS
 ```
+- ・DockerでEC2インスタンスにアプリとNginx適用します。
+アプリの場合、SQLの接続ため、プット5432を開けて、RDS証明書を読むため、証明書フォルダーをマウントします。
+
+``` yml
+services:
+  dreamhacker-back:
+    image: xxxxxxx.dkr.ecr.ap-northeast-1.amazonaws.com/dreamhacker:latest
+    env_file:
+      - ./.env  # Specify the environment file
+    volumes:
+      - ./cert:/usr/src/app/cert
+    ports:
+      - "5432:5432"
+    restart: unless-stopped  # Optional: restart policy
+    networks:
+      - dreamhacker-network  # Optional: specify a custom network
+```
+- ・Nginxの場合、HTTPとHTTPSのデフォルトポットを開けます。
+
+``` yml
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - dreamhacker-networ。
+```
+
+- ・NginxのDockerfile
+
+``` bash
+FROM alpine:latest
+RUN apk add --no-cache nginx openrc
+RUN rm /etc/nginx/http.d/default.conf                         
+COPY default.conf /etc/nginx/http.d/default.conf              #Configをコピーする
+COPY ./ssl/certificate.crt /etc/nginx/ssl/certificate.crt     #証明書をコピーする
+COPY ./ssl/private.key /etc/nginx/ssl/private.key             #キーをコピーする
+RUN mkdir -p /run/nginx
+EXPOSE 80 443
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+- ・Nginxの設定
+
+```bash
+        #HTTPSにリダイレクト
+server {
+        listen 80 default_server;
+        server_name www.dreamhacker.online;
+        return 301 https://$server_name$request_uri;
+}
+
+server {
+        listen 443 ssl;
+
+        #証明書を読み込む
+        ssl_certificate /etc/nginx/ssl/certificate.crt;
+        ssl_certificate_key /etc/nginx/ssl/private.key;
+
+        server_name www.dreamhacker.online;
+
+        #アプリにリクエストをリダイレクト
+        location / {
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+
+                proxy_pass http://dreamhacker-back:8080;
+        }
+}
+~   
+```
+
+- ・Dockerfileを実行するとアベイラブルになります。

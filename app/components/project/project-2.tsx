@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import { LuArrowUpRight } from "react-icons/lu";
+import Markdown from "./markdown";
 
-export default function Project2({children}: {children: ReactNode}) {
+export default function Project2({ children }: { children: ReactNode }) {
   return (
     <div className="border-t-2">
       <div className="project-1 py-10 md:pt-44 w-full flex flex-wrap-reverse gap-52 lg:gap-10 *:min-w-[300px] *:flex-1 md:px-[5%] xl:px-[20%] bg-blue-100/60">
@@ -30,15 +30,11 @@ export default function Project2({children}: {children: ReactNode}) {
               className="text-xl w-full md:w-3/4 border-2 border-slate-300 p-4 
               rounded-2xl shadow-xl hover:shadow-none transition-shadow duration-300"
             >
-              Developed a comprehensive E-commerce Store Management to manage my
-              store
+              私の店舗を管理するために、包括的なEコマース店舗管理システムを開発しました。
             </p>
-            <div className="flex gap-2 items-center cursor-pointer hover:underline animate-bounce">
-              How I built this
-              <LuArrowUpRight />
-            </div>
+            <Markdown>{children}</Markdown>
           </div>
-          </div>
+        </div>
       </div>
       <div className="flex flex-col justify-center items-center bg-white relative">
         <div className="flex flex-col justify-center items-center md:px-[5%] xl:px-[20%] py-32 w-3/4">
@@ -50,16 +46,12 @@ export default function Project2({children}: {children: ReactNode}) {
       </div>
       <div className="flex flex-wrap h-1/4 bg-blue-100/60 px-[5%] xl:px-[20%] py-20 justify-center text-lg gap-10">
         <p className="w-full lg:w-3/4">
-          Developed a comprehensive E-commerce Store Management System that
-          includes product and inventory management, order processing, customer
-          relationship management, and payment processing. Using NextJS for
-          Front-end, Nest.JS for Backend and AWS for Infra. You can login and
-          experience your self.
+          製品および在庫管理、注文処理、顧客関係管理、支払い処理を含む包括的なEコマースストア管理システムを開発しました。フロントエンドにはNext.js、バックエンドにはNest.js、インフラにはAWSを使用しています。ログインしてご自身で体験することができます。
         </p>
         <div className="flex items-center">
           <a href="https://lychie.vercel.app" target="_blank">
             <button className="bg-blue-400 w-fit p-2 px-4 rounded-3xl hover:underline">
-              View Page
+              ページを開く
             </button>
           </a>
         </div>

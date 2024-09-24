@@ -1,0 +1,243 @@
+# **Store Management**
+
+製品および在庫管理、注文処理、顧客関係管理、支払い処理を含む包括的なEコマースストア管理システムを開発しました。フロントエンドにはNext.js、バックエンドにはNest.js、インフラにはAWSを使用しています。ログインしてご自身で体験することができます。
+
+## **システム概要**
+
+### アーキテクチャ
+
+- **Nest.js** : バックエンドAPI。
+- **Next.js** : ユーザインタフェース。
+- **AWS** : ホスティングのためのインフラ, **EC2**, **ECR**, **S3**, **RDS**などのサービスを含まれています。
+- **NGINX** : ロードバランス, Web Server
+- **Docker** : サービスをデプロイ
+- **GitlabCI** : CI/CD
+
+## **開発過程**
+
+### **1. 技術選択**
+
+- **開発言語** : JavaScriptに集中しているため、Node.jsとNext.jsを選びました。同じ言語を使用することで、開発時間を短縮することができています。
+
+- **データベース (PostgreSQL)** : 一番気に入って、機能豊富なRelationDatabaseデータベースを使うことをしました。
+NoSQLを使ったら実装が簡単になるのに、誰がかNoSQLを一番学習法がSQLを学ぶことだとってた。
+- **Amazon Web Services** :
+
+- **- RDS** : 以前が使ったことがありますが、このプロジェクトのデータベースを作成した後、作成するところに自動的にEC2インスタンスを接続するセキュリティーグループを作成することができると気づきました。
+
+<div className="flex justify-center">
+    <img src={"/project/dreamhacker/db-ec2.png"} width="70%" />
+</div>
+
+- ・クライエントから接続を作成するため、EC2のSSHキーが必要です。
+
+<div className="flex justify-center">
+    <img src={"/project/dreamhacker/db-ssh.png"} width="40%" />
+</div>
+
+- ・Node.JSから接続を作成するため、証明書も必要です。AWSのサイトからRDSの証明証をダウンロードできます。
+
+``` ts
+const postgresSingleton = () => {
+  return new pg.Pool({
+    ssl:
+      config.ENV === "production"
+        ? {
+            ca: fs.readFileSync("./cert/rds-combined-ca-bundle.pem"),
+          }
+        : false,
+  });
+};
+```
+
+- ・EC2からテーブルスキマを適用するため、BashScriptを作成しました。もっと複雑ですが、
+
+``` bash
+#!/bin/bash
+PASSWORD=""
+export PGPASSWORD=$PASSWORD
+schema="database/schema"
+for file in $schema/*.sql
+do
+        echo "executing $file..."
+        psql -h $HOST -p $PORT -U $USER -d $DATABASE -f $file
+done
+unset PGPASSWORD
+```
+
+
+- ・EC2インスタンスに指すため、Aレコードを追加します。今、HTTPでdomain nameを通じてEC2との接続を作成できるようになりいました。HTTPSをセットアップするため、証明書が提供されることが必要です。
+Nginxをセットアップステップで実装します。
+
+<div className="flex justify-center">
+    <img src={"/project/dreamhacker/domain.png"} width="80%" />
+</div>
+
+- ・Dockerfileを定義します。
+``` docker
+#２ステップビルド
+FROM node:20-alpine AS development
+ARG NODE_ENV=development
+ENV NODE_ENV=${NODE_ENV} #環境値
+
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN yarn install
+COPY . .
+RUN yarn run build
+
+FROM node:20-alpine as production
+ARG NODE_ENV=production
+ENV NODE_ENV=${NODE_ENV}
+
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN yarn install --only=prod
+COPY --from=development /usr/src/app/dist ./dist
+CMD ["node", "dist/index.js"]
+```
+
+- ・環境準備ができた後、GitlabCIでCI/CDを設定します。まず、実行環境を定義します
+
+``` yml
+stages:
+  - build
+  - release
+
+.aws_config:
+  before_script:
+    - apk add --no-cache curl jq python3 py3-pip
+    - pip install awscli --break-system-packages
+    - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+    - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+    - aws configure set region $AWS_DEFAULT_REGION
+    - aws ecr-public get-login-password --region us-east-1
+         docker login --username AWS --password-stdin public.ecr.aws/$AWS_REGISTRY_NAME
+
+variables:
+  IMAGE_NAME: lychie-back-repo
+
+build:
+  stage: build
+  extends:
+    - .aws_config
+  script:
+    # イメージをビルドする
+    - docker build -t $IMAGE_NAME .
+    - docker tag $IMAGE_NAME:latest public.ecr.aws/$AWS_REGISTRY_NAME/$IMAGE_NAME:latest
+    - docker push public.ecr.aws/$AWS_REGISTRY_NAME/$IMAGE_NAME:latest
+
+release:
+  image: ubuntu
+  stage: release
+  before_script:
+    # Pythonをインストール
+    - apt update
+    - apt install -y curl jq python3 python3-pip wget
+    - pip3 install awscli --break-system-packages
+    - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+    - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+    - aws configure set region $AWS_DEFAULT_REGION
+
+  script:
+    # SessionManagementをインストール
+    - wget https://s3.amazonaws.com/ec2-downloads-windows
+    /SSMAgent/latest/debian_amd64/amazon-ssm-agent.deb
+    - dpkg -i amazon-ssm-agent.deb
+    - aws ssm send-command --document-name "AWS-RunShellScript" --document-version "1"
+        --targets '[{"Key":"InstanceIds","Values":["i-02aef90967cd313eb"]}]'
+        --parameters '{"commands":[
+        #ECRからイメージをプール
+        "docker pull $(docker ps -a |grep back | awk '"'"'{print $2}'"'"')", 
+        #コンテナーをシャットダウンして、新しいイメージを適用する
+        "docker-compose down -v","docker-compose up -d"],
+        #タイムアウト
+        "workingDirectory":["/home/ec2-user"],"executionTimeout":["3600"]}' 
+        --timeout-seconds 600 --max-concurrency "50" --max-errors "0" 
+        --region xxxxxx --output text
+
+    # LOG
+    - echo $(aws ecr-public describe-images --repository-name xxxx 
+    --region xxx | grep imageDigest | head -n 1 | awk '{print $2}') > DEL_IMG
+    - cat DEL_IMG
+
+```
+
+- ・DockerでEC2インスタンスにアプリとNginx適用します。
+アプリの場合、SQLの接続ため、プット5432を開けて、RDS証明書を読むため、証明書フォルダーをマウントします。
+
+``` yml
+services:
+  lychie-back:
+    image: xxxxxxx.dkr.ecr.ap-northeast-1.amazonaws.com/lychie:latest
+    env_file:
+      - ./.env  # Specify the environment file
+    volumes:
+      - ./cert:/usr/src/app/cert
+    ports:
+      - "5432:5432"
+    restart: unless-stopped  # Optional: restart policy
+    networks:
+      - lychie-network  # Optional: specify a custom network
+```
+- ・Nginxの場合、HTTPとHTTPSのデフォルトポットを開けます。
+
+``` yml
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - lychie-networ。
+```
+
+- ・NginxのDockerfile
+
+``` bash
+FROM alpine:latest
+RUN apk add --no-cache nginx openrc
+RUN rm /etc/nginx/http.d/default.conf                         
+COPY default.conf /etc/nginx/http.d/default.conf              #Configをコピーする
+COPY ./ssl/certificate.crt /etc/nginx/ssl/certificate.crt     #証明書をコピーする
+COPY ./ssl/private.key /etc/nginx/ssl/private.key             #キーをコピーする
+RUN mkdir -p /run/nginx
+EXPOSE 80 443
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+- ・Nginxの設定
+
+```bash
+        #HTTPSにリダイレクト
+server {
+        listen 80 default_server;
+        server_name www.lychie.online;
+        return 301 https://$server_name$request_uri;
+}
+
+server {
+        listen 443 ssl;
+
+        #証明書を読み込む
+        ssl_certificate /etc/nginx/ssl/certificate.crt;
+        ssl_certificate_key /etc/nginx/ssl/private.key;
+
+        server_name www.lychie.online;
+
+        #アプリにリクエストをリダイレクト
+        location / {
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+
+                proxy_pass http://lychie-back:8080;
+        }
+}
+~   
+```
+
+- ・Dockerfileを実行するとアベイラブルになります。

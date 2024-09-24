@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { LuArrowUpRight } from "react-icons/lu";
 import Markdown from "./markdown";
 
-export default function Project3({children}: {children: ReactNode}) {
+export default function Project3({ children }: { children: ReactNode }) {
   return (
     <div>
       <div className="project-3 py-32 w-full flex flex-wrap gap-40 lg:gap-10 *:min-w-[300px] *:flex-1 md:px-[5%] xl:px-[20%] bg-white md:min-h-[60vh]">
@@ -13,11 +13,12 @@ export default function Project3({children}: {children: ReactNode}) {
             className="text-xl w-full md:w-3/4 border-2 border-slate-300 p-4 
           rounded-2xl shadow-xl hover:shadow-none transition-shadow duration-300"
           >
-            若い者向け留学体験共有Forum。<br/><br/>応募体験、勉強方法、大学評判等。
+            若い者向け留学体験共有Forum。
+            <br />
+            <br />
+            応募体験、勉強方法、大学評判等。
           </p>
-          <Markdown>
-            {children}
-          </Markdown>
+          <Markdown>{children}</Markdown>
         </div>
 
         <div className="relative group *:lg:scale-[60%]  *:absolute *:left-10 *:rounded-2xl *:shadow-2xl *:transition-all *:duration-300 pb-64">
@@ -48,17 +49,12 @@ export default function Project3({children}: {children: ReactNode}) {
       </div>
       <div className="flex flex-wrap h-1/4 bg-white px-[5%] xl:px-[20%] py-20 justify-center text-lg gap-10">
         <p className="w-full lg:w-3/4">
-          Dedicated to developing a leading international online and offline
-          community professionals. People can share experiences on GMAT and
-          TOEFL preparation, business-school application, school lives, career
-          development, and to explore business opportunitie. Helping others
-          achieve both personal and professional goals, and to cultivating
-          long-term trusted relationship among members.
+          国際的なオンラインおよびオフラインのコミュニティを発展させることに専念しています。メンバーはGMATやTOEFLの準備、ビジネススクールへの出願、学校生活、キャリア開発、ビジネスの機会を探るなどの経験を共有することができます。他者が個人的および専門的な目標を達成する手助けをし、メンバー同士の信頼できる長期的な関係を築くことを目指しています。
         </p>
         <div className="flex items-center">
           <a href="https://app.dreamhacker.online/" target="_blank">
             <button className="bg-blue-400 w-fit p-2 px-4 rounded-3xl hover:underline">
-              View Page
+              ページを開く
             </button>
           </a>
         </div>
