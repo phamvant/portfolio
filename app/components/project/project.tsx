@@ -21,10 +21,12 @@ export default function Project({ children, data }: { children: ReactNode, data:
           >
             {data.short_des}
           </p>
-          <Markdown>{children}</Markdown>
+          {data.mdx ?
+            <Markdown>{children}</Markdown> : <></>}
         </div>
+        
         {data.settings.isMobile ?
-          <div className="relative group *:lg:scale-[60%]  *:absolute *:left-10 *:rounded-2xl *:shadow-2xl *:transition-all *:duration-300 pb-64">
+          <div className="relative group *:lg:scale-[60%]  *:absolute *:left-10 -translate-y-44 *:rounded-2xl *:shadow-2xl *:transition-all *:duration-300 pb-64">
             <img
               src={data.images[0]}
               className="w-3/4 lg:w-full lg:group-hover:-translate-y-60 lg:group-hover:-translate-x-80"

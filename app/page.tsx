@@ -19,7 +19,7 @@ export interface DataProps {
   gif: string,
   link: string
   settings: PageSettings
-  mdx: any
+  mdx?: any
 }
 
 const data: Record<string, DataProps> = {
@@ -34,13 +34,49 @@ const data: Record<string, DataProps> = {
       "/project/dreamhacker/5.png",
       "/project/dreamhacker/6.png",
     ],
-    gif: "/ecom.gif",
+    gif: "/dreamhacker.gif",
     link: "https://dream-hacker.com",
     settings: {
       isMobile: false,
       isLeft: false
     },
     mdx: <Dreamhacker />
+  },
+  "kanji": {
+    year: "2024",
+    nameEn: "Kanji Study",
+    nameJa: "漢字学習アプリ",
+    short_des: "最も効果的な漢字学習方法。覚えたい言葉から文章を自動生成。",
+    long_des: "去年JLPTを学習する時、どんな学習アプリを使ってみても、自分に合わないと感じました。私にとって最も効果的な学習方法は覚えたい言葉に様々な場面で出会うことです。それで、入力した言葉からランダムに文章を作成し、日本語辞書の公開APIから文章を取得するアプリを作成しました。友達にもよく使用してもらっています。彼らのフィードバックを参考にして、新しい機能を追加するようにしています。",
+    images: [
+      "/project/kanji/3.png",
+      "/project/kanji/2.png",
+      "/project/kanji/1.png",
+    ],
+    gif: "/study.gif",
+    link: "http://kanjistudio.vercel.app",
+    settings: {
+      isMobile: true,
+      isLeft: true
+    },
+  }, 
+  "compute_hub": {
+    year: "2023",
+    nameEn: "ComputeHub",
+    nameJa: "分散コンピューティング",
+    short_des: "ブラウザーでコンピューティングパワーを共有するプロジェクト。「PandoComputingコアモジュールを使用」",
+    long_des: "提案された解決策は、個人がコンピュータ、ノートパソコン、モバイルフォンなどの個人デバイスを通じて計算能力を提供できるボランティアコンピューティングシステムを構築することです。このシステムは、ボランティアが登録し、計算能力を提供し、研究プロジェクトに参加できるように、シンプルで使いやすいユーザーインターフェースを提供します。同時に、高度なアルゴリズムを使用してタスクを管理し、リソースを分配し、計算パフォーマンスを最適化します。",
+    images: [
+      "/project/computehub/2.png",
+      "/project/computehub/1.png",
+    ],
+    gif: "/compute.gif",
+    link: "https://compute-hub-fe-vert.vercel.app",
+    settings: {
+      isMobile: false,
+      isLeft: false
+    },
+    mdx: <ComputeHub />
   },
   "lychie": {
     year: "2024",
@@ -61,26 +97,6 @@ const data: Record<string, DataProps> = {
     },
     mdx: <Lychie />
   }, 
-
-  "compute_hub": {
-    year: "2023",
-    nameEn: "ComputeHub",
-    nameJa: "分散コンピューティング",
-    short_des: "ブラウザーでコンピューティングパワーを共有するプロジェクト。「PandoComputingコアモジュールを使用」",
-    long_des: "提案された解決策は、個人がコンピュータ、ノートパソコン、モバイルフォンなどの個人デバイスを通じて計算能力を提供できるボランティアコンピューティングシステムを構築することです。このシステムは、ボランティアが登録し、計算能力を提供し、研究プロジェクトに参加できるように、シンプルで使いやすいユーザーインターフェースを提供します。同時に、高度なアルゴリズムを使用してタスクを管理し、リソースを分配し、計算パフォーマンスを最適化します。",
-    images: [
-      "/project/computehub/2.png",
-      "/project/computehub/1.png",
-    ],
-    gif: "/compute.gif",
-    link: "https://compute-hub-fe-vert.vercel.app",
-    settings: {
-      isMobile: false,
-      isLeft: false
-    },
-    mdx: <ComputeHub />
-  },
-
 }
 
 export default async function Home() {
