@@ -49,9 +49,9 @@ const data: Record<string, DataProps> = {
     short_des: "最も効果的な漢字学習方法。覚えたい言葉から文章を自動生成。",
     long_des: "去年JLPTを学習する時、どんな学習アプリを使ってみても、自分に合わないと感じました。私にとって最も効果的な学習方法は覚えたい言葉に様々な場面で出会うことです。それで、入力した言葉からランダムに文章を作成し、日本語辞書の公開APIから文章を取得するアプリを作成しました。友達にもよく使用してもらっています。彼らのフィードバックを参考にして、新しい機能を追加するようにしています。",
     images: [
-      "/project/kanji/3.png",
-      "/project/kanji/2.png",
-      "/project/kanji/1.png",
+      "/project/kanji/3.PNG",
+      "/project/kanji/2.PNG",
+      "/project/kanji/1.PNG",
     ],
     gif: "/study.gif",
     link: "http://kanjistudio.vercel.app",
